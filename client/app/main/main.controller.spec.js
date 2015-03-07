@@ -16,7 +16,7 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should check that 1 is 1', function () {
+  it('should expect 1 to be 1', function () {
     expect(1).toBe(1);
   });
 });
