@@ -147,15 +147,15 @@
  *
  * @apiDescription Logs an admin into the site and provides a session.
  *
- * @apiParam {String} email The email address for the admin.
+ * @apiParam {String} username The username for the admin.
  * @apiParam {String} password The password for the admin.
  * @apiParam {String} [callback] The callback function name for JSONP.
  *
  * @apiExample {curl} Example-usage:
- *     curl -X POST https://vand.io/api/admin/login -d "email=mockadmin@vand.io&password=mockpassword"
+ *     curl -X POST https://vand.io/api/admin/login -d "username=mockadmin&password=mockpassword"
  *
  * @apiExample {curl} Callback-usage:
- *     curl -X POST https://vand.io/api/admin/login -d "email=mockadmin@vand.io&password=mockpassword&callback=foobar"
+ *     curl -X POST https://vand.io/api/admin/login -d "username=mockadmin&password=mockpassword&callback=foobar"
  *
  * @apiSuccess {String} message The successful message.
  *
