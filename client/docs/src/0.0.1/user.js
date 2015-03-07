@@ -1,4 +1,70 @@
 /**
+ * @apiDefine user User Access
+ * This endpoint can be access only by users.
+ */
+
+/**
+ * @api {get} /api/user/ Get User
+ * @apiVersion 0.0.1
+ * @apiName Get User
+ * @apiGroup User
+ * @apiPermission user
+ *
+ * @apiDescription Gets the user from the database.
+ *
+ * @apiParam {String} [callback] The callback function name for JSONP.
+ *
+ * @apiExample {curl} Example-usage:
+ *     curl -X GET https://vand.io/api/user
+ *
+ * @apiExample {curl} Callback-usage:
+ *     curl -X GET https://vand.io/api/user?callback=foobar
+ *
+ * @apiSuccess {Object} user The user object.
+ * @apiSuccess {String} user._id The user unique id.
+ * @apiSuccess {String} user.username The user username.
+ * @apiSuccess {String[]} user.cases The id values of the cases.
+ * @apiSuccess {Object} user.preferences The user preferences object.
+ * @apiSuccess {String[]} user.preferences.tags The types of attacks that a user can follow.
+ *
+ * @apiSuccessExample Success-Response:
+ *      HTTP/1.1 200 OK
+ *      {"_id":"3f9cdf63-640c-4f43-8dc9-0f2b87157221","username":"7ac93a6e-49b3-4202-899e-577013a1f7e3","cases":[],"preferences":{"tags":[]}}
+ *
+ * @apiError (401 Unauthorized) PleaseSignIn The user is not signed in.
+ * @apiError (401 Unauthorized) UsersOnly The user account signed in is an admin.
+ * @apiError (400 Bad Request) MissingUsername The username is missing from the request.
+ * @apiError (400 Bad Request) InvalidUsername The username is not a UUID value.
+ * @apiError (400 Bad Request) UserNotExists The username provided is not in the database,
+ * @apiError (500 Internal Server Error) RequestIssue There was an issue with the server.
+ *
+ * @apiErrorExample Error-Response: (Please Sign In)
+ *      HTTP/1.1 400 Bad Request
+ *      {"message": "Please sign in."}
+ *
+ * @apiErrorExample Error-Response: (Users Only)
+ *      HTTP/1.1 400 Bad Request
+ *      {"message": "Please sign in as a user."}
+ *
+ * @apiErrorExample Error-Response: (Missing Username)
+ *      HTTP/1.1 400 Bad Request
+ *      {"message": "Missing username."}
+ *
+ * @apiErrorExample Error-Response: (Invalid Username)
+ *      HTTP/1.1 400 Bad Request
+ *      {"message": "Invalid username."}
+ *
+ * @apiErrorExample Error-Response: (User Not Exists)
+ *      HTTP/1.1 400 Bad Request
+ *      {"message": "User does not exist."}
+ *
+ * @apiErrorExample Error-Response: (Request Issue)
+ *      HTTP/1.1 500 Internal Server Error
+ *      {"message": "Could not get the user."}
+ *
+ */
+
+/**
  * @api {post} /api/user/login Login
  * @apiVersion 0.0.1
  * @apiName Login
