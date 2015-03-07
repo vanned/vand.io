@@ -3,7 +3,7 @@ Vand.io
 
 Sharing Forensic Evidence w/ Private & Public Sectors
 
-[![Build Status](https://travis-ci.org/vanned/vand.io.svg&branch=master)](https://travis-ci.org/vanned/vand.io)
+[![Build Status](https://travis-ci.org/vanned/vand.io.svg?branch=master)](https://travis-ci.org/vanned/vand.io)
 [![Dependency Status](https://david-dm.org/vanned/vand.io.svg)](https://david-dm.org/vanned/vand.io)
 [![Built with Yeoman](https://pixel-cookers.github.io/built-with-badges/yeoman/yeoman-long.png)](http://yeoman.io)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)

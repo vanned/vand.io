@@ -22,9 +22,15 @@
 
 -  **TODO** `(line 449)`  Finish writing the update application tests.
 
+<<<<<<< HEAD
+## server/api/user/login/login.controller.js
+
+-  **TODO** `(line 33)`  Lock the user out if they continue to use the wrong password.
+=======
 ## server/components/appointment/index.js
 
 -  **TODO** `(line 119)`  Get keybase checks working.
+>>>>>>> master
 
 ## server/components/emails/templates/admin/appointment/html.jade
 
