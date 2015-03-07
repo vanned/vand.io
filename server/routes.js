@@ -10,6 +10,7 @@ module.exports = function(app) {
 
   // Insert routes below
   app.use('/api/application', require('./api/application'));
+  app.use('/api/application/approved', require('./api/application/approved'));
 
   app.use('/api/admin/forgotPassword', require('./api/admin/forgotPassword'));
   app.use('/api/admin/lostPassword', require('./api/admin/lostPassword'));

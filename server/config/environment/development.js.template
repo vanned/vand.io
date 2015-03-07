@@ -21,6 +21,16 @@ module.exports = {
     },
     noReply: '' // no-reply@domain.com
   },
+  keybase: {
+    usernameOrEmail: '',
+    password: ''
+  },
+  twitter: {
+    consumerKey: '',
+    consumerSecret: '',
+    token: '',
+    tokenSecret: ''
+  },
   google: {
     recaptcha: { // https://www.google.com/recaptcha/admin
       siteKey: '',

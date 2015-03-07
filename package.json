@@ -28,6 +28,7 @@
     "nodemailer-sendgrid-transport": "^0.1.0",
     "request": "^2.53.0",
     "serve-favicon": "~2.0.1",
+    "twitter": "^1.2.1",
     "validator": "^3.33.0"
   },
   "devDependencies": {

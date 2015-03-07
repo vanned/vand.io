@@ -28,6 +28,12 @@ module.exports = {
     usernameOrEmail: 'testUsername',
     password: 'testPassword'
   },
+  twitter: {
+    consumerKey: 'testConsumerKey',
+    consumerSecret: 'testConsumerSecret',
+    token: 'testToken',
+    tokenSecret: 'testTokenSecret'
+  },
   google: {
     recaptcha: {
       siteKey: 'testKey',

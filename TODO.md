@@ -14,17 +14,23 @@
 
 -  **TODO** `(line 61)`  Check the length of the password to be 12+ chars because they are an admin.
 
-## server/api/application/updateApplication.controller.js
+## server/api/application/approved/approved.controller.js
 
--  **TODO** `(line 217)`  Kick of queue workflow to check alert an admin of an in person appointment or start the Keybase checks.
+-  **TODO** `(line 64)`  Revert the database changes of inserting the users.
 
 ## server/api/application/updateApplication.spec.js
 
 -  **TODO** `(line 449)`  Finish writing the update application tests.
 
+<<<<<<< HEAD
 ## server/api/user/login/login.controller.js
 
 -  **TODO** `(line 33)`  Lock the user out if they continue to use the wrong password.
+=======
+## server/components/appointment/index.js
+
+-  **TODO** `(line 119)`  Get keybase checks working.
+>>>>>>> master
 
 ## server/components/emails/templates/admin/appointment/html.jade
 
@@ -39,6 +45,10 @@
 -  **TODO** `(line 5)`  We will make this email pretty later.
 
 ## server/components/emails/templates/applications/create/html.jade
+
+-  **TODO** `(line 5)`  We will make this email pretty later.
+
+## server/components/emails/templates/users/register/html.jade
 
 -  **TODO** `(line 5)`  We will make this email pretty later.
 
