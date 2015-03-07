@@ -16,15 +16,19 @@
 
 ## server/api/application/updateApplication.controller.js
 
--  **TODO** `(line 202)`  Kick of queue workflow to check alert an admin of an in person appointment or start the Keybase checks.
+-  **TODO** `(line 217)`  Kick of queue workflow to check alert an admin of an in person appointment or start the Keybase checks.
 
 ## server/api/application/updateApplication.spec.js
 
 -  **TODO** `(line 449)`  Finish writing the update application tests.
 
-## server/components/schema/user.js
+## server/api/user/login/login.controller.js
 
--  **TODO** `(line 6)`  Finish the user schema file.
+-  **TODO** `(line 33)`  Lock the user out if they continue to use the wrong password.
+
+## server/components/emails/templates/admin/appointment/html.jade
+
+-  **TODO** `(line 5)`  We will make this email pretty later.
 
 ## server/components/emails/templates/admin/lostPassword/html.jade
 
