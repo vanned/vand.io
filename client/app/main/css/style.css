@@ -976,7 +976,7 @@
 		padding-top: 3em;
 	}
 
-	#header {
+	.header {
 		background: #1d2726;
 		color: #fff;
 		cursor: default;
@@ -989,7 +989,7 @@
 		z-index: 10000;
 	}
 
-		#header h1 {
+		.header h1 {
 			color: #fff;
 			height: inherit;
 			left: 1.25em;
@@ -1000,16 +1000,16 @@
 			top: 0;
 		}
 
-			#header h1 a {
+			.header h1 a {
 				font-size: 1em;
 			}
 
-				#header h1 a:before {
+				.header h1 a:before {
 					color: #e9685f;
 					margin-right: 0.35em;
 				}
 
-		#header nav {
+		.header nav {
 			font-weight: 600;
 			height: inherit;
 			letter-spacing: 0.125em;
@@ -1021,19 +1021,19 @@
 			vertical-align: middle;
 		}
 
-			#header nav > ul {
+			.header nav > ul {
 				list-style: none;
 				margin: 0;
 				padding-left: 0;
 			}
 
-				#header nav > ul > li {
+				.header nav > ul > li {
 					display: inline-block;
 					margin-left: 2em;
 					padding-left: 0;
 				}
 
-					#header nav > ul > li a {
+					.header nav > ul > li a {
 						-moz-transition: color 0.2s ease-in-out;
 						-webkit-transition: color 0.2s ease-in-out;
 						-o-transition: color 0.2s ease-in-out;
@@ -1045,24 +1045,24 @@
 						font-size: 0.8em;
 					}
 
-						#header nav > ul > li a:before {
+						.header nav > ul > li a:before {
 							margin-right: 0.5em;
 							opacity: 0.5;
 						}
 
-						#header nav > ul > li a:hover {
+						.header nav > ul > li a:hover {
 							color: #fff;
 						}
 
-					#header nav > ul > li.active > a {
+					.header nav > ul > li.active > a {
 						color: #fff;
 					}
 
-					#header nav > ul > li:first-child {
+					.header nav > ul > li:first-child {
 						margin-left: 0;
 					}
 
-					#header nav > ul > li .button {
+					.header nav > ul > li .button {
 						font-size: 1em;
 						height: 2.25em;
 						line-height: 2.25em;
@@ -1073,19 +1073,19 @@
 						vertical-align: middle;
 					}
 
-					#header nav > ul > li > ul {
+					.header nav > ul > li > ul {
 						display: none;
 					}
 
-		#header .container {
+		.header .container {
 			position: relative;
 		}
 
-			#header .container h1 {
+			.header .container h1 {
 				left: 0;
 			}
 
-			#header .container nav {
+			.header .container nav {
 				right: 0;
 			}
 
@@ -1283,6 +1283,13 @@
 				top: 0;
 				width: 10px;
 			}
+/*Register*/
+
+.input-email{
+  text-align: center;
+  display: inline-block;
+  width: 50%;
+}
 
 /* Footer */
 
@@ -1322,3 +1329,4 @@
 			font-size: 0.9em;
 			margin: 2em 0 0 0;
 		}
+
