@@ -20,6 +20,15 @@
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
       <link rel="stylesheet" href="app/app.css">
+      <link rel="stylesheet" href="app/main/css/font-awesome.min.css">
+      <link rel="stylesheet" href="app/main/css/ie/v8.css">
+      <link rel="stylesheet" href="app/main/css/skel.css">
+      <link rel="stylesheet" href="app/main/css/style-mobile.css">
+      <link rel="stylesheet" href="app/main/css/style-mobilep.css">
+      <link rel="stylesheet" href="app/main/css/style-narrow.css">
+      <link rel="stylesheet" href="app/main/css/style-normal.css">
+      <link rel="stylesheet" href="app/main/css/style-wide.css">
+      <link rel="stylesheet" href="app/main/css/style.css">
       <link rel="stylesheet" href="app/main/main.css">
       <!-- endinjector -->
     <!-- endbuild -->
@@ -30,7 +39,9 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div ng-include="'components/navbar/navbar.html'"></div>
     <div ng-view=""></div>
+    <div ng-include="'components/footer/footer.html'"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -63,6 +74,9 @@
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
+          <script src="app/application-thankyou/application-thankyou.controller.js"></script>
+          <script src="app/application-thankyou/application-thankyou.js"></script>
+          <script src="app/main/css/ie/html5shiv.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
