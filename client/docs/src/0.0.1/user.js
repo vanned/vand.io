@@ -1,4 +1,57 @@
 /**
+ * @api {post} /api/user/login Login
+ * @apiVersion 0.0.1
+ * @apiName Login
+ * @apiGroup User
+ * @apiPermission public
+ *
+ * @apiDescription Logs the user in and gives them a session.
+ *
+ * @apiParam {String} username The username of the account.
+ * @apiParam {String} password The password of the account.
+ * @apiParam {String} [callback] The callback function name for JSONP.
+ *
+ * @apiExample {curl} Example-usage:
+ *     curl -X POST https://vand.io/api/user/login -d "username=mockuser&password=mockpassword"
+ *
+ * @apiExample {curl} Callback-usage:
+ *     curl -X POST https://vand.io/api/user/login -d "username=mockuser&password=mockpassword&callback=foobar"
+ *
+ * @apiSuccess {String} message The successful message.
+ *
+ * @apiSuccessExample Success-Response:
+ *      HTTP/1.1 200 OK
+ *      {"message":"Logged In."}
+ *
+ * @apiError (400 Bad Request) MissingUsername The username is missing from the request.
+ * @apiError (400 Bad Request) MissingPassword The password is missing from the request.
+ * @apiError (400 Bad Request) UserNotExists The username provided is not in the database,
+ * @apiError (400 Bad Request) WrongPassword The password provided does not match the password in the database.
+ * @apiError (500 Internal Server Error) LoginIssue There was an issue with the server.
+ *
+ * @apiErrorExample Error-Response: (Missing Username)
+ *      HTTP/1.1 400 Bad Request
+ *      {"message": "Missing username."}
+ *
+ * @apiErrorExample Error-Response: (Missing Password)
+ *      HTTP/1.1 400 Bad Request
+ *      {"message": "Missing password."}
+ *
+ * @apiErrorExample Error-Response: (User Not Exists)
+ *      HTTP/1.1 400 Bad Request
+ *      {"message": "User does not exist."}
+ *
+ * @apiErrorExample Error-Response: (Wrong Password)
+ *      HTTP/1.1 400 Bad Request
+ *      {"message": "Wrong password."}
+ *
+ * @apiErrorExample Error-Response: (Login Issue)
+ *      HTTP/1.1 500 Internal Server Error
+ *      {"message": "Could not log the user in."}
+ *
+ */
+
+/**
  * @api {post} /api/user/apply Apply
  * @apiVersion 0.0.1
  * @apiName Apply
