@@ -1,0 +1,24 @@
+{
+  "views": {
+    "all": {
+      "map": "function (doc) { emit(null, doc); }",
+      "reduce": "_count"
+    },
+    "by_id": {
+      "map": "function (doc) { emit(doc._id, doc); }",
+      "reduce": "_count"
+    },
+    "by_company_name": {
+      "map": "function (doc) { emit(doc.company.name, doc); }",
+      "reduce": "_count"
+    },
+    "by_email": {
+      "map": "function (doc) { emit(doc.email, doc); }",
+      "reduce": "_count"
+    },
+    "by_company_website": {
+      "map": "function (doc) { emit(doc.company.website, doc); }",
+      "reduce": "_count"
+    }
+  }
+}

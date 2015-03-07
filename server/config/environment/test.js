@@ -1,0 +1,37 @@
+'use strict';
+
+// Test specific configuration
+// ===========================
+module.exports = {
+  domain: 'http://localhost:9000',
+  session: {
+    secret: '784YEthBwReODNNChSHUyYExq9Q2xTieYud5WbxVHLWTKDjVnyUH4XAz7940reesfuP4cudJ2SH67d5mStnnx2RLVLgUXn02ziBk' // 64+ char phrase
+  },
+  couchdb: {
+    url: 'http://localhost:5984',
+    dbs: {
+      admins: 'vand-test-admins',
+      users: 'vand-test-users',
+      applications: 'vand-test-applications'
+    }
+  },
+  // Emails won't be sent out but the transporter needs to load.
+  email: {
+    sendgrid: {
+      username: 'testUser',
+      password: 'testPassword'
+    },
+    noReply: 'no-reply@test.com',
+    admins: 'admins@test.com'
+  },
+  keybase: {
+    usernameOrEmail: 'testUsername',
+    password: 'testPassword'
+  },
+  google: {
+    recaptcha: {
+      siteKey: 'testKey',
+      secretKey: 'testSecret'
+    }
+  }
+};

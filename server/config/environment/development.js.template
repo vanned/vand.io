@@ -1,0 +1,30 @@
+'use strict';
+
+// Development specific configuration
+// ==================================
+module.exports = {
+  session: {
+    secret: '' // 64+ char phrase
+  },
+  couchdb: {
+    url: 'http://localhost:5984',
+    dbs: {
+      admins: 'vand-admins',
+      users: 'vand-users',
+      applications: 'vand-applications'
+    }
+  },
+  email: {
+    sendgrid: {
+      username: '', // Sendgrid username
+      password: '' // Sendgrid password
+    },
+    noReply: '' // no-reply@domain.com
+  },
+  google: {
+    recaptcha: { // https://www.google.com/recaptcha/admin
+      siteKey: '',
+      secretKey: ''
+    }
+  }
+};

@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+  head
+  body
+    // TODO We will make this email pretty later.
+    p You have an appointment request for #{date}
+    p The coordinator for #{companyName} (#{website}) is
+    p Name: #{firstname} #{lastname}
+    p
+      a(href="tel:#{phonenumber}") #{phonenumber}
+    p
+      a(href="mailto:#{email}") #{email}
