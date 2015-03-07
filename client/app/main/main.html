@@ -112,11 +112,10 @@
 					<h2>Register</h2>
 				</header>
 				<div layout-align="center center" layout="column">
-					<form ng-submit="register()" name="registerForm" class="input-email" novalidate>
+					<form ng-submit="register()" name="registerForm" class="input-email">
 						<md-input-container  >
 						<label>Email</label>
-						<input name="email" require type="email" >
-						<p ng-show="registerForm.email.$invalid && !registerForm.email.$pristine" class="help-block">Enter a valid email.</p>
+						<input name="email"  ng-model="email" type="email" required>
 					</md-input-container>
 					<div layout="row" layout-align="center center"><md-button class="md-raised md-primary">Register</md-button></div>
 				</form>
