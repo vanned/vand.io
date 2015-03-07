@@ -87,8 +87,8 @@ exports.admin = {
         email: params.coordinator.email,
         phonenumber: params.coordinator.phonenumber,
         date: moment.utc(params.date).toString(),
-        companyName: company.name,
-        website: company.website
+        companyName: params.company.name,
+        website: params.company.website
       }, function (error, html, text) {
         if(error) {
           return callback(error);

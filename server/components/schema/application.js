@@ -25,6 +25,8 @@ module.exports = function () {
     },
     created: null,
     updated: null,
-    approved: false
+    verifyToken: null,
+    approved: false,
+    approvedBy: null
   };
 };
