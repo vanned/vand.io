@@ -215,7 +215,6 @@ exports.index = function(req, res) {
               return res.status(500).jsonp({message: 'Could not update application.'});
             }
             appment.update();
-            // TODO Kick of queue workflow to check alert an admin of an in person appointment or start the Keybase checks.
             return res.jsonp({message: 'Application updated.'});
           });
         });

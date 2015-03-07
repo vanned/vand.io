@@ -140,3 +140,37 @@ exports.applications = {
     });
   }
 };
+
+exports.users = {
+  register: function (params, callback) {
+    var templatesDir = path.join(__dirname, 'templates/users');
+    var loginUrl = url.resolve(settings.domain, '/user/login');
+    emailTemplates(templatesDir, function (error, templates) {
+      if(error) {
+        return callback(error);
+      }
+      templates('register', {
+        loginUrl: loginUrl,
+        username: params.username,
+        password: params.password,
+        resetCodes: params.resetCodes
+      }, function (error, html, text) {
+        if(error) {
+          return callback(error);
+        }
+        var mailOptions = {
+          from: settings.email.noReply,
+          to: params.email,
+          subject: 'User Account Created!',
+          html: html
+        };
+        transporter.sendMail(mailOptions, function (error, info) {
+          if(error) {
+            return callback(error);
+          }
+          return callback(null, info);
+        });
+      });
+    });
+  }
+};

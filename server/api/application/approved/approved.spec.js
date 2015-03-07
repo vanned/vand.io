@@ -10,6 +10,7 @@ var request = require('supertest');
 var appDB = require('../../../components/database/applications');
 var application = require('../../../components/schema/application')();
 var adminDB = require('../../../components/database/admins');
+var userDB = require('../../../components/database/users');
 var admin = require('../../../components/schema/admin')();
 
 var cookie;
@@ -93,7 +94,55 @@ describe('POST /api/application/approved', function() {
             console.log('Error compacting application database.'.red);
             return done(error);
           }
-          done();
+          userDB.searchByAll(function (error, reply) {
+            if(error) {
+              console.log('Error getting users.'.red);
+              return done(error);
+            }
+            var docs = reply.rows.map(function (row) {
+              row.value._deleted = true;
+              return row.value;
+            });
+            userDB.deleteBulk(docs, function (error) {
+              if(error) {
+                console.log('Error deleting users.'.red);
+                return done(error);
+              }
+              userDB.compact(function (error) {
+                if(error) {
+                  console.log('Error compacting user database.'.red);
+                  return done(error);
+                }
+                // Search for all admins.
+                adminDB.searchByAll(function (error, reply) {
+                  if(error) {
+                    console.log('Error retreiving users.'.red);
+                    return done(error);
+                  }
+                  // Update their docs to delete.
+                  var docs = reply.rows.map(function (row) {
+                    row.value._deleted = true;
+                    return row.value;
+                  });
+                  // Bulk delete.
+                  adminDB.deleteBulk(docs, function (error, reply) {
+                    if(error) {
+                      console.log('Error deleting users.'.red);
+                      return done(error);
+                    }
+                    // Compact database.
+                    adminDB.compact(function (error, reply) {
+                      if(error) {
+                        console.log('Error compacting admin database.'.red);
+                        return done(error);
+                      }
+                      done();
+                    });
+                  });
+                });
+              });
+            });
+          });
         });
       });
     });
