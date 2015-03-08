@@ -1,0 +1,42 @@
+<div layout="row" layout-wrap class="content">
+  <div flex="33">
+    <h3>{{username}}</h3>
+    <img ng-src="https://placehold.it/250" alt="Avatar">
+  </div>
+  <div flex="66">
+    <div layout="row" id="postsHeader">
+      <div flex="60">
+        <h2>Your Posts</h2>
+      </div>
+      <div flex="40">
+        <md-button class="md-primary md-raised" ng-click="addCase()">Add A Case +</md-button>
+      </div>
+    </div>
+    <div ng-show="cases.length === 0">
+      <h3>You have no made any posts yet!</h3>
+    </div>
+    <div class="table-wrapper" ng-show="cases.length > 0">
+       <table class="alt">
+         <thead>
+           <tr>
+             <th>Name</th>
+             <th>Description</th>
+             <th>Tags</th>
+           </tr>
+         </thead>
+         <tbody >
+           <tr ng-repeat="case in cases" ng-animate="'animate'">
+             <td>
+               <p>{{case._id}}</p>
+               <p>{{case.username}}</p>
+               <p>{{case.created | date: 'medium'}}</p>
+               <p>{{case.ratings.up - case.ratings.down}}</p>
+             </td>
+             <td>{{case.description}}</td>
+             <td>{{case.tags.join('\n')}}</td>
+           </tr>
+         </tbody>
+       </table>
+    </div>
+  </div>
+</div>

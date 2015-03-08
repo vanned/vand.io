@@ -19,12 +19,12 @@ var username;
 describe('POST /api/case/open', function() {
 
   beforeEach(function (done) {
-    /*nock('https://test-bucket.s3-us-west-1.amazonaws.com:443')
+    nock('https://test-bucket.s3-us-west-1.amazonaws.com:443')
     .put('/logs.txt', fs.readFileSync(__dirname + '/logs.txt', {encoding: 'utf8'}))
     .reply(200, {
       'ETag': 'd79254641d0c186d4d13427c85ce3fe7',
       'Location': 'https://test-bucket.s3-us-west-1.amazonaws.com/log.txt'
-    });*/
+    });
     username = uuid.v4();
     user._id = uuid.v4();
     user.username = username;

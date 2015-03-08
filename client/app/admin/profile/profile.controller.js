@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('vandioApp').controller('ProfileCtrl', ['$scope', 'applicationService', '$mdToast', function ($scope, applicationService, $mdToast) {
+angular.module('vandioApp').controller('AdminProfileCtrl', ['$scope', 'applicationService', '$mdToast', function ($scope, applicationService, $mdToast) {
   applicationService.getAll().success(function (applications) {
     $scope.applications = applications;
   }).error(function (error, statusCode) {
@@ -12,9 +12,9 @@ angular.module('vandioApp').controller('ProfileCtrl', ['$scope', 'applicationSer
       );
   });
 
-  $scope.accept = function (application) {
+  $scope.accept = function ($index) {
     applicationService.approved({
-      id: application._id
+      id: $scope.applications[$index]._id
     }).success(function (approvedResp) {
       $mdToast.show(
         $mdToast.simple()
@@ -22,7 +22,7 @@ angular.module('vandioApp').controller('ProfileCtrl', ['$scope', 'applicationSer
           .position('bottom left')
           .hideDelay(3000)
         );
-      $scope.applications.splice(application, 1);
+      $scope.applications.splice($scope.applications[$index], 1);
     }).error(function (error, statusCode) {
       $mdToast.show(
         $mdToast.simple()

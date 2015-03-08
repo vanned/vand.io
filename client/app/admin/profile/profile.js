@@ -5,6 +5,6 @@ angular.module('vandioApp')
     $routeProvider
       .when('/admin/profile', {
         templateUrl: 'app/admin/profile/profile.html',
-        controller: 'ProfileCtrl'
+        controller: 'AdminProfileCtrl'
       });
   });

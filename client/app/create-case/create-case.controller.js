@@ -1,22 +1,13 @@
 'use strict';
 
-angular.module('vandioApp').controller('createCaseController', ['$scope','$timeout',function ($scope,$timeout) {
+angular.module('vandioApp').controller('createCaseController', ['$scope', 'tagService', '$mdToast', function ($scope, tagService, $mdToast) {
 $scope.user = {};
-
-	// // $scope.login = function(){
-	// // 	userservice.login({username:$scope.user.email,password:$scope.user.password})
-	// // 	.success(function(data) {
-	// // 		console.log(data);
-	// // 	}).error(function (error) {
-	// // 		console.log(error);
-	// 	});
-	// };
 $scope.isDisabled = false;
 $scope.noCache = true;
 
 $scope.querySearch = function(searchText){
-  var result=[];
-	var categories = [{
+  var result = [];
+  var categories = [{
    id: 'Eaves Dropping',
     value: '_EAVES_DROPPING_'
   }, {
@@ -47,35 +38,36 @@ $scope.querySearch = function(searchText){
     id: 'Undefined',
     value: '_UNDEFINED_'
   }];
-  
-  //console.log(categoryNames.indexOf(searchText));
-   categories.forEach(function(each){
-   	if(each.id.toLowerCase().indexOf(searchText)!= -1 ) result.push(each.id);
-   });
+  categories.forEach(function(each){
+    if(each.id.toLowerCase().indexOf(searchText) != -1 ) {
+      result.push(each.id);
+    }
+  });
   $scope.item = result;
-   return result;
+  return result;
 }
 
 $scope.loadTags = function() {
-    // Use timeout to simulate a 650ms request.
-  $scope.tags = [];
-  return $timeout(function() {
-    $scope.tags = [
-      { id: 1, name: 'Lizard Squad'},
-      { id: 2, name: 'Lone wolf' },
-      { id: 3, name: 'Mobile Device' },
-      { id: 4, name: 'foobar1' },
-      { id: 5, name: 'foobar2' },
-      ];
-    }, 650);
-}
+  tagService.getTags().success(function (tags) {
+    $scope.tags = tags || [];
+  }).error(function (error, statusCode) {
+    $mdToast.show(
+      $mdToast.simple()
+        .content(error.message)
+        .position('bottom left')
+        .hideDelay(3000)
+      );
+  });
+};
 
-  $scope.uploadFile = function(){
+$scope.uploadFile = function() {
 
-  }
+};
 
 $scope.selectedTags = [];
-	$scope.selecttag = function(tag){
-	$scope.selectedTag.push(tag.name);
-  }
+
+$scope.selectTag = function(tag) {
+  $scope.selectedTag.push(tag);
+};
+
 }]);

@@ -29,6 +29,7 @@ exports.index = function(req, res) {
       return res.jsonp([caseRes]);
     });
   } else {
+    var username = req.session.username || req.query.username;
     caseDB.searchByKey('by_username', username, function (error, reply) {
       if(error) {
         console.log(error);
