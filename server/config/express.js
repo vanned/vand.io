@@ -75,8 +75,8 @@ module.exports = function(app) {
     app.set('trust proxy', 1);
     app.use(session({
       store: new RedisStore({
-        host: settings.redis.host,
-        port: settings.redis.port
+        host: config.redis.host,
+        port: config.redis.port
       }),
       cookie: {
         path: '/',
@@ -96,8 +96,8 @@ module.exports = function(app) {
   if ('development' === env || 'test' === env) {
     app.use(session({
       store: new RedisStore({
-        host: settings.redis.host,
-        port: settings.redis.port
+        host: config.redis.host,
+        port: config.redis.port
       }),
       cookie: {
         path: '/',
