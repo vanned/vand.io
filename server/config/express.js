@@ -8,6 +8,7 @@ var express = require('express');
 var favicon = require('serve-favicon');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var multiparty = require('multiparty');
 var compression = require('compression');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
@@ -28,48 +29,40 @@ module.exports = function(app) {
   app.use(bodyParser.json());
   app.use(methodOverride());
   app.use(cookieParser(config.session.secret));
-  // app.use(function (req, res, next) {
-  //   req.files = {};
-  //   req.body = {};
-  //   if(req.busboy) {
-  //     req.busboy.on('field', function (fieldname, val, fieldnameTruncated, valTruncated) {
-  //       req.body[fieldname] = val;
-  //     });
-  //     req.busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
-  //       if(!filename) {
-  //         next();
-  //       }
-  //       file.fileRead = [];
-  //       file.on('data', function (chunk) {
-  //         this.fileRead.push(chunk);
-  //       });
-  //       file.on('error', function (error) {
-  //         console.log('Error while buffering the stream: ', error);
-  //       });
-  //       file.on('end', function () {
-  //         var finalBuffer = Buffer.concat(this.fileRead);
-  //         req.files[fieldname] = {
-  //           buffer: finalBuffer,
-  //           size: finalBuffer.length,
-  //           filename: filename,
-  //           mimetype: mimetype
-  //         };
-  //       });
-  //     });
-  //     req.busboy.on('filesLimit', function () {
-  //       next();
-  //     });
-  //     req.busboy.on('error', function (error) {
-  //       console.log('Error while parsing the form: ', error);
-  //     });
-  //     req.busboy.on('finish', function () {
-  //       next();
-  //     });
-  //     req.pipe(req.busboy);
-  //   } else {
-  //     next();
-  //   }
-  // });
+  app.use(function (req, res, next) {
+    if(req.method === 'POST' && req.headers['content-type'].indexOf("multipart/form-data") !== -1) {
+      var form = new multiparty.Form();
+      req.body = req.body || {};
+      form.on('field', function (field, value) {
+        req.body[field] = value;
+      });
+      form.on('part', function (part) {
+        part.fileRead = [];
+        part.on('data', function (chunk) {
+          this.fileRead.push(chunk);
+        });
+        part.on('error', function (err) {
+          next(err);
+        });
+        req.files = req.files || {};
+        part.on('end', function () {
+          var finalBuffer = Buffer.concat(this.fileRead);
+          req.files[part.name] = {
+            buffer: finalBuffer,
+            size: finalBuffer.length,
+            filename: part.filename,
+            mimetype: part.headers['content-type']
+          };
+        });
+      });
+      form.on('close', function () {
+        next();
+      });
+      form.parse(req);
+    } else {
+      next();
+    }
+  });
 
   if ('production' === env) {
     app.set('trust proxy', 1);
