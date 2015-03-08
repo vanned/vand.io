@@ -29,3 +29,30 @@
 .content{
     margin-top: 3.25em;
 }
+
+.animate-enter-setup, .animate-leave-setup {
+    -webkit-transition: 1s linear all;
+    /* Safari/Chrome */
+    -moz-transition: 1s linear all;
+    /* Firefox */
+    -ms-transition: 1s linear all;
+    /* IE10 */
+    -o-transition: 1s linear all;
+    /* Opera */
+    transition: 1s linear all;
+    /* Future Browsers */
+}
+.animate-enter-setup {
+    opacity: 0;
+}
+.animate-enter-setup.animate-enter-start {
+    /* The animation code itself */
+    opacity: 1;
+}
+.animate-leave-setup {
+    opacity: 1;
+}
+.animate-leave-setup.animate-leave-start {
+    /* The animation code itself */
+    opacity: 0;
+}

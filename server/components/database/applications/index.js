@@ -31,10 +31,28 @@ exports.searchByAll = function (callback) {
   });
 };
 
+exports.searchByApproved = function (callback) {
+  appDB.view('applications', 'by_approved', {reduce: false}, function (error, body, headers) {
+    if(error) {
+      return callback(error);
+    }
+    return callback(null, body);
+  });
+};
+
+exports.searchByUnapproved = function (callback) {
+  appDB.view('applications', 'by_unapproved', {reduce: false}, function (error, body, headers) {
+    if(error) {
+      return callback(error);
+    }
+    return callback(null, body);
+  });
+};
+
 exports.searchByKey = function (view, key, callback) {
   appDB.view('applications', view, {reduce: false, key: key}, function (error, body, headers) {
     if(error) {
-      return callback(errorr);
+      return callback(error);
     }
     return callback(null, body);
   });

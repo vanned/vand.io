@@ -11,55 +11,55 @@
      <form  name="applicationForm" ng-submit="submitApplication()">
      	<md-input-container>
 	      <label>Organization Name</label>
-	      <input ng-model="application.company" required type="text">
+	      <input type="text" ng-model="application.company.name" required>
 	    </md-input-container>
 	    <md-input-container>
 	      <label>Domain Name</label>
-	      <input ng-model="application.domain" required type="text">
+	      <input type="url" ng-model="application.company.website" required>
 	    </md-input-container>
 	    <fieldset layout="row">
 		   <md-subheader class="md-primary">Appointment</md-subheader>
 		    <md-radio-group require ng-model="application.appointment.type">
-		      <md-radio-button value="keybase" disabled>Keybase</md-radio-button>
-		      <md-radio-button value="inperson"> In-Person </md-radio-button>
+		      <md-radio-button value="useKeybase" disabled>Keybase</md-radio-button>
+		      <md-radio-button value="inPerson"> In-Person </md-radio-button>
 		    </md-radio-group>
 		    <div class="animate-switch-container indent-form" ng-switch on="application.appointment.type" flex="66">
-			      <div class="animate-switch" ng-switch-when="keybase">Under Development</div>
-		      <div class="animate-switch" ng-switch-when="inperson">
+			      <div class="animate-switch" ng-switch-when="useKeybase">Under Development</div>
+		      <div class="animate-switch" ng-switch-when="inPerson">
 		      		<md-input-container>
 				      <label>First Name</label>
-				      <input ng-model="application.appointment.firstName" required type="text">
+				      <input type="text" ng-model="application.appointment.firstname" required autocomplete="off">
 				    </md-input-container>
 				    <md-input-container>
 				      <label>Last Name</label>
-				      <input ng-model="application.appointment.lastName"  required type="text">
+				      <input type="text" ng-model="application.appointment.lastname" required autocomplete="off">
 				    </md-input-container>
 				    <md-input-container>
 				      <label>Email</label>
-				      <input ng-model="application.appointment.email"  required type="email">
+				      <input type="email" ng-model="application.appointment.email" required autocomplete="off">
 				    </md-input-container>
 				    <md-input-container>
 				      <label>Phone</label>
-				      <input ng-model="application.appointment.phone"  required type="phone">
+				      <input type="phone" ng-model="application.appointment.phonenumber" required>
 				    </md-input-container>
 				    <div layout="row">
 					    <md-input-container flex="33">
 					    	<div >
 						      <label>Date</label>
-						      <input  ng-model="application.appointment.date"  required type="date">
+						      <input type="date" ng-model="application.appointment.date" required>
 					  		</div>
 					  	</md-input-container>
 					  	<div flex="33">&nbsp;</div>
 					  	<md-input-container flex="33">
 					  		<div>
 						      <label>Time</label>
-						      <input ng-model="application.appointment.time" required type="time">
+						      <input type="time" ng-model="application.appointment.time" required>
 					  		</div>
 					    </md-input-container>
 					 <div>
 		      </div>
 		  </div>
-		 </fieldset> 
+		 </fieldset>
 		  <div layout="row" layout-align="center center"><md-button type='submit' class="md-raised md-primary">Submit</md-button></div>
      </form>
   </md-card-content>

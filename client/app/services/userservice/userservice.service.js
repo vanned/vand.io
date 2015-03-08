@@ -1,14 +1,28 @@
 'use strict';
 
 angular.module('vandioApp')
-  .service('userservice',['$http', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-    var userserviceInstance = {
-    	login: function(params){
-    		return $http.post('/api/user/login',  data: params)
-    	}
-      
-      }
-       return userserviceInstance;
-
-  }]);
+.service('userservice',['$http', function ($http) {
+  // AngularJS will instantiate a singleton by calling "new" on this function
+  return {
+    login: function(params) {
+        return $http({
+          method: 'POST',
+          url: '/api/user/login',
+          data: params
+        });
+    },
+    register: function (registerData) {
+      return $http({
+        method: 'POST',
+        url: '/api/user/apply',
+        data: registerData
+      });
+    },
+    logout: function () {
+      return $http({
+        method: 'GET',
+        url: '/api/user/logout'
+      });
+    }
+  };
+}]);

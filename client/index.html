@@ -20,9 +20,10 @@
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
+      <link rel="stylesheet" href="app/admin/login/login.css">
+      <link rel="stylesheet" href="app/admin/profile/profile.css">
       <link rel="stylesheet" href="app/app.css">
       <link rel="stylesheet" href="app/application-form/application-form.css">
-      <link rel="stylesheet" href="app/create-case/create-case.css">
       <link rel="stylesheet" href="app/main/css/skel.css">
       <link rel="stylesheet" href="app/main/css/style-mobile.css">
       <link rel="stylesheet" href="app/main/css/style-mobilep.css">
@@ -42,7 +43,7 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-      
+
     <!-- Add your site or application content here -->
     <div ng-include="'components/navbar/navbar.html'"></div>
     <div ng-view=""></div>
@@ -76,20 +77,26 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,client}) app/app.js -->
     <script src="app/app.js"></script>
     <!-- injector:js -->
+    <script src="app/admin/login/login.controller.js"></script>
+    <script src="app/admin/login/login.js"></script>
+    <script src="app/admin/profile/profile.controller.js"></script>
+    <script src="app/admin/profile/profile.js"></script>
     <script src="app/application-form/application-form.controller.js"></script>
     <script src="app/application-form/application-form.js"></script>
     <script src="app/application-thankyou/application-thankyou.controller.js"></script>
     <script src="app/application-thankyou/application-thankyou.js"></script>
-    <script src="app/create-case/create-case.controller.js"></script>
-    <script src="app/create-case/create-case.js"></script>
     <script src="app/main/main.controller.js"></script>
     <script src="app/main/main.js"></script>
+    <script src="app/services/adminService/adminService.service.js"></script>
+    <script src="app/services/applicationService/applicationService.service.js"></script>
     <script src="app/services/userservice/userservice.service.js"></script>
     <script src="app/user-login/user-login.controller.js"></script>
     <script src="app/user-login/user-login.js"></script>

@@ -2,17 +2,18 @@
   <md-content>
     <md-card>
       <md-card-content>
-        <h2>Login</h2>
+        <!-- TODO The header is not showing up because the navbar on top of it -->
+        <h2>Admin Login</h2>
         <form ng-submit="login()">
             <md-input-container>
               <label>Username</label>
-              <input type="text" ng-model="user.username" required>
+              <input type="text" ng-model="admin.username" required>
             </md-input-container>
             <md-input-container>
               <label>Password</label>
-              <input type="password" ng-model="user.password" required>
+              <input type="password" ng-model="admin.password" required>
             </md-input-container>
-            <md-button class="md-raised md-primary">Login</md-button>
+            <md-button type="submit" class="md-raised md-primary">Login</md-button>
         </form>
       </md-card-content>
     </md-card>

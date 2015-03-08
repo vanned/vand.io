@@ -1,9 +1,13 @@
 <header class="header skel-layers-fixed" ng-controller="NavbarCtrl">
-	<h1><a href="index.html" class="icon fa-tint">Vand</a></h1>
-	<nav id="nav">
-		<ul>
-			<li><a href="">Register</a></li>
-			<li><a href="/user/login">LogIn</a></li>
-		</ul>
-	</nav>
+  <h1><a href="/" class="icon fa-tint">Vand</a></h1>
+    <nav id="nav">
+      <ul ng-show="!loggedIn">
+        <li><a ng-click="goToBottom()">Register</a></li>
+        <li><a href="/user/login">LogIn</a></li>
+      </ul>
+      <ul ng-show="loggedIn">
+        <li><a href="/user/home">My Account</a></li>
+        <li><a ng-click="logout()">Logout</a></li>
+      </ul>
+    </nav>
 </header>

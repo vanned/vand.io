@@ -5,46 +5,51 @@
  * @apiGroup Application
  * @apiPermission public
  *
- * @apiDescription Gets an application from the database given the id value.
+ * @apiDescription Gets an application from the database given the id value. If you are an admin, you can get all the applications that are unapproved without passing an id value.
  *
- * @apiParam {String} id The application id to get from the database.
+ * @apiParam {String} [id] The application id to get from the database.
  * @apiParam {String} [callback] The callback function name for JSONP.
  *
- * @apiExample {curl} Example-usage:
+ * @apiExample {curl} Example-id-usage:
  *     curl -X GET https://vand.io/api/application?id=703ed1f4-34e7-478a-bcad-cad2ea279449
+ *
+ * @apiExample {curl} Example-admin-usage:
+ *     curl -X GET https://vand.io/api/application
  *
  * @apiExample {curl} Callback-usage:
  *     curl -X GET https://vand.io/api/application?id=703ed1f4-34e7-478a-bcad-cad2ea279449&callback=foobar
  *
- * @apiSuccess {Object} application The application object.
- * @apiSuccess {Object} application.email The email that applied.
- * @apiSuccess {Object} application.updated The last time the application was updated.
- * @apiSuccess {Object} application.verifyToken The Twitter verification code for checking the DM. Currently not supported.
- * @apiSuccess {Object} application.approved Whether the application was approved or not.
- * @apiSuccess {Object} application.approvedBy Who the application was approved by. Should be an admin username.
- * @apiSuccess {Object} application.company The company object.
- * @apiSuccess {String} application.company.name The company name.
- * @apiSuccess {String} application.company.website The company website.
- * @apiSuccess {Object} application.appointment The appointment object.
- * @apiSuccess {Boolean} application.appointment.inPerson Whether the appointment is inPerson or not.
- * @apiSuccess {Object} application.appointment.coordinator If inPerson is true, the coordinator object should have the contact filled.
- * @apiSuccess {String} application.appointment.coordinator.firstname If inPerson is true, the first name of the coordinator.
- * @apiSuccess {String} application.appointment.coordinator.lastname If inPerson is true, the last name of the coordinator.
- * @apiSuccess {String} application.appointment.coordinator.phonenumber If inPerson is true, the phone number of the coordinator.
- * @apiSuccess {String} application.appointment.coordinator.email If inPerson is true, the email of the coordinator.
- * @apiSuccess {Boolean} application.appointment.useKeybase Whether the appointment uses keybase verification or not. Current unsupported.
- * @apiSuccess {Object} application.appointment.keybase Whether the appointment uses keybase verification or not. Current unsupported.
- * @apiSuccess {String} application.appointment.keybase.username If useKeybase is true, the username of the keybase account. Current unsupported.
- * @apiSuccess {String} application.appointment.keybase.domain If useKeybase is true, the domain on the keybase account to verify. Current unsupported.
- * @apiSuccess {Number} application.appointment.date The appointment time in epoch milliseconds UTC. (moment.utc().valueOf())
+ * @apiSuccess {Object[]} applications The applications list.
+ * @apiSuccess {Object} applications.application The application object.
+ * @apiSuccess {Object} applications.application.email The email that applied.
+ * @apiSuccess {Object} applications.application.updated The last time the application was updated.
+ * @apiSuccess {Object} applications.application.verifyToken The Twitter verification code for checking the DM. Currently not supported.
+ * @apiSuccess {Object} applications.application.approved Whether the application was approved or not.
+ * @apiSuccess {Object} applications.application.approvedBy Who the application was approved by. Should be an admin username.
+ * @apiSuccess {Object} applications.application.company The company object.
+ * @apiSuccess {String} applications.application.company.name The company name.
+ * @apiSuccess {String} applications.application.company.website The company website.
+ * @apiSuccess {Object} applications.application.appointment The appointment object.
+ * @apiSuccess {Boolean} applications.application.appointment.inPerson Whether the appointment is inPerson or not.
+ * @apiSuccess {Object} applications.application.appointment.coordinator If inPerson is true, the coordinator object should have the contact filled.
+ * @apiSuccess {String} applications.application.appointment.coordinator.firstname If inPerson is true, the first name of the coordinator.
+ * @apiSuccess {String} applications.application.appointment.coordinator.lastname If inPerson is true, the last name of the coordinator.
+ * @apiSuccess {String} applications.application.appointment.coordinator.phonenumber If inPerson is true, the phone number of the coordinator.
+ * @apiSuccess {String} applications.application.appointment.coordinator.email If inPerson is true, the email of the coordinator.
+ * @apiSuccess {Boolean} applications.application.appointment.useKeybase Whether the appointment uses keybase verification or not. Current unsupported.
+ * @apiSuccess {Object} applications.application.appointment.keybase Whether the appointment uses keybase verification or not. Current unsupported.
+ * @apiSuccess {String} applications.application.appointment.keybase.username If useKeybase is true, the username of the keybase account. Current unsupported.
+ * @apiSuccess {String} applications.application.appointment.keybase.domain If useKeybase is true, the domain on the keybase account to verify. Current unsupported.
+ * @apiSuccess {Number} applications.application.appointment.date The appointment time in epoch milliseconds UTC. (moment.utc().valueOf())
  *
  * @apiSuccessExample Success-Response:
  *      HTTP/1.1 200 OK
- *      {"_id":"703ed1f4-34e7-478a-bcad-cad2ea279449","email":"mockuser@vand.io","company":{"name":"Mock Company Inc.","website":"http://mockwebsite.com"},"appointment":{"inPerson":true,"coordinator":{"firstname":"John","lastname":"Smith","phonenumber":"555-555-5555","email":"mockuser@vand.io"},"useKeybase":false,"keybase":{"username":null,"domain":null},"date":1426913980906},"created":1425619495555,"updated":1425716561481,"approved":true,"approvedBy":"mockadmin"}
+ *      [{"_id":"703ed1f4-34e7-478a-bcad-cad2ea279449","email":"mockuser@vand.io","company":{"name":"Mock Company Inc.","website":"http://mockwebsite.com"},"appointment":{"inPerson":true,"coordinator":{"firstname":"John","lastname":"Smith","phonenumber":"555-555-5555","email":"mockuser@vand.io"},"useKeybase":false,"keybase":{"username":null,"domain":null},"date":1426913980906},"created":1425619495555,"updated":1425716561481,"approved":true,"approvedBy":"mockadmin"}]
  *
  * @apiError (400 Bad Request) MissingId The application id is missing from the request.
  * @apiError (400 Bad Request) InvalidId The application id is not a valid uuid v4 value.
  * @apiError (400 Bad Request) IdNotExists The application id does not exist in the database.
+ * @apiError (400 Bad Request) NoAppExists No application exists in the database.
  * @apiError (500 Internal Server Error) RequestIssue There was an issue with the server.
  *
  * @apiErrorExample Error-Response: (Missing Id)
@@ -58,6 +63,10 @@
  * @apiErrorExample Error-Response: (Id Not Exists)
  *      HTTP/1.1 400 Bad Request
  *      {"message": "Id does not exist."}
+ *
+ * @apiErrorExample Error-Response: (No App Exists)
+ *      HTTP/1.1 400 Bad Request
+ *      {"message": "No applications exist."}
  *
  * @apiErrorExample Error-Response: (Request Issue)
  *      HTTP/1.1 500 Internal Server Error

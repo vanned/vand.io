@@ -19,6 +19,14 @@
     "by_company_website": {
       "map": "function (doc) { emit(doc.company.website, doc); }",
       "reduce": "_count"
+    },
+    "by_approved": {
+      "map": "function (doc) { emit(doc.approved, doc); }",
+      "reduce": "_count"
+    },
+    "by_unapproved": {
+      "map": "function (doc) { emit(!doc.approved, doc); }",
+      "reduce": "_count"
     }
   }
 }

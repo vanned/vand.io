@@ -1,0 +1,33 @@
+<div layout="row" layout-wrap>
+  <div flex="33">
+    <h3>{{username}}</h3>
+    <img ng-src="https://placehold.it/250" alt="Avatar">
+  </div>
+  <div flex="66">
+    <h3>Pending Requests</h3>
+    <div ng-show"applications.length === 0">
+      <h3>No new applications to decide on!</h3>
+    </div>
+    <div class="table-wrapper" ng-show="applications.length > 0">
+       <table class="alt">
+         <thead>
+           <tr>
+             <th>Name</th>
+             <th>Description</th>
+             <th>Decision</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr ng-repeat="application in applications" ng-animate="'animate'">
+             <td>{{application.company.name}}</td>
+             <td>{{application.appointment.inPerson ? 'In Person' : 'Keybase Confirmation'}} - {{application.appointment.date | amCalendar:'utc'}}</td>
+             <td>
+               <md-button ng-click="accept($index)" class="md-primary md-raised">Accept</md-button>
+               <md-button ng-click="deny($index)" class="md-warn md-raised">Deny</md-button>
+             </td>
+           </tr>
+         </tbody>
+       </table>
+    </div>
+  </div>
+</div>
