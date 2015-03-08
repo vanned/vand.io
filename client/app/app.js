@@ -5,7 +5,8 @@ angular.module('vandioApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'noCAPTCHA'
+  'noCAPTCHA',
+  'ngMaterial'
 ])
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   $routeProvider

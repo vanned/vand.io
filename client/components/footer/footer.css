@@ -1,0 +1,13 @@
+
+/* Footer */
+
+#footer {
+	background: #1d2726;
+	color: #888;
+	padding: 4em 0;
+	text-align: center;
+}
+#footer .copyright {
+	font-size: 0.9em;
+	margin: 2em 0 0 0;
+}
