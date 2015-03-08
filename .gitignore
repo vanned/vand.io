@@ -8,3 +8,4 @@ dist
 /server/config/environment/development.js
 client/docs/output
 package.json
+.DS_store

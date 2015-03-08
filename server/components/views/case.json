@@ -1,0 +1,32 @@
+{
+  "views": {
+    "all": {
+      "map": "function (doc) { emit(null, doc); }",
+      "reduce": "_count"
+    },
+    "by_id": {
+      "map": "function (doc) { emit(doc._id, doc); }",
+      "reduce": "_count"
+    },
+    "by_username": {
+      "map": "function (doc) { emit(doc.username, doc); }",
+      "reduce": "_count"
+    },
+    "by_created": {
+      "map": "function (doc) { emit(doc.created, doc); }",
+      "reduce": "_count"
+    },
+    "by_views": {
+      "map": "function (doc) { emit(doc.views, doc); }",
+      "reduce": "_count"
+    },
+    "by_up_ratings": {
+      "map": "function (doc) { emit(doc.ratings.up, doc); }",
+      "reduce": "_count"
+    },
+    "by_down_ratings": {
+      "map": "function (doc) { emit(doc.ratings.down, doc); }",
+      "reduce": "_count"
+    }
+  }
+}

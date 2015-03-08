@@ -1,0 +1,81 @@
+/*
+	Catalyst by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Basic */
+
+	body, input, select, textarea {
+		font-size: 12pt;
+	}
+
+/* Feature */
+
+	.feature {
+		margin: 0 auto 2em auto;
+		max-width: 100%;
+		padding: 0;
+		text-align: center;
+		width: 30em;
+	}
+
+		.feature i {
+			left: 0;
+			margin: 0 auto 2em auto;
+			position: relative;
+			top: 0;
+		}
+
+/* Image Feature */
+
+	.image-feature {
+		margin: 0 auto 2em auto;
+		max-width: 100%;
+		width: 25em;
+	}
+
+		.image-feature .image {
+			max-height: none;
+		}
+
+/* Wrapper */
+
+	.wrapper {
+		padding: 2.5em 1.25em 0.5em 1.25em;
+	}
+
+/* Banner */
+
+	#banner {
+		padding: 6em 0;
+	}
+
+		#banner .inner {
+			padding: 2em 2.5em;
+			width: 100%;
+		}
+
+			#banner .inner h2 {
+				font-size: 1.5em;
+			}
+
+			#banner .inner p {
+				margin: 1.5em 0 0 0;
+				padding: 1.5em 0 0 0;
+			}
+
+/* One */
+
+	#one .device {
+		border-width: 20px;
+		margin-top: 2em;
+		max-width: 100%;
+		width: 25em;
+	}
+
+		#one .device:after {
+			height: 8px;
+			margin: -13px 0 0 -4px;
+			width: 8px;
+		}

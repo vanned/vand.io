@@ -1,0 +1,45 @@
+
+header.major {
+	position: relative;
+}
+
+header.major:after {
+	background: #eee;
+	content: '';
+	display: inline-block;
+	height: 3px;
+	margin: 0 0 2em 0;
+	width: 6em;
+}
+
+header.major.alt {
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+header p {
+	letter-spacing: 0.125em;
+	margin: 0 0 1.5em 0;
+	position: relative;
+	text-transform: uppercase;
+}
+
+header h2 + p {
+	font-size: 1em;
+	margin-top: -0.85em;
+	line-height: 1.75em;
+}
+
+header h3 + p {
+	font-size: 0.9em;
+	margin-top: -0.75em;
+	line-height: 1.75em;
+}
+
+header h4 + p,
+header h5 + p,
+header h6 + p {
+	font-size: 0.8em;
+	margin-top: -0.75em;
+	line-height: 1.75em;
+}
