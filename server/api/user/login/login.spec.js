@@ -64,6 +64,7 @@ describe('POST /api/user/login', function() {
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function (err, res) {
+        console.log(res.body)
         if (err) {
           return done(err);
         }

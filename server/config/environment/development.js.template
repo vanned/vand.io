@@ -11,7 +11,8 @@ module.exports = {
     dbs: {
       admins: 'vand-admins',
       users: 'vand-users',
-      applications: 'vand-applications'
+      applications: 'vand-applications',
+      cases: 'vand-cases'
     }
   },
   email: {

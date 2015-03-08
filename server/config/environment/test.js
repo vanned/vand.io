@@ -12,7 +12,18 @@ module.exports = {
     dbs: {
       admins: 'vand-test-admins',
       users: 'vand-test-users',
-      applications: 'vand-test-applications'
+      applications: 'vand-test-applications',
+      cases: 'vand-test-cases'
+    }
+  },
+  amazon: {
+    aws: {
+      s3: {
+        accessKeyId: 'testAccessKeyId',
+        secretAccessKey: 'testSecretAccessKey',
+        arn: 'testArn',
+        bucket: 'test-bucket'
+      }
     }
   },
   // Emails won't be sent out but the transporter needs to load.

@@ -1,0 +1,52 @@
+DDOS logs of: Censored for safety!
+
+Key:
+Online = Site up
+Offline = Down
+-------
+Total attacks - 29/01/2015: 5
+Total attacks - 30/01/2015: 6
+Total attacks - 31/01/2015: 3
+Total attacks - 01/02/2015: 1
+Total attacks - 02/02/2015: 4
+Total attacks - 03/02/2015: 4
+-------
+Website - http://x360gama.com/ | Attack: Success | Status: Offline
+Server  - 92.222.170.128:7127  | Attack: Success | Status: Offline
+Site    - http://nerdhacks.net | Attack: Success | Status: Offline
+Site    - 72.167.191.69        | Attack: Failed  | Status: Online
+Site    - http://xbl.zone      | Attack: Success | Status: Offline
+===================================================================
+Site    - wealdstoneraider.net | Attack: Success | Status: Offline
+Site    - 93.186.240.104       | Attack: Success | Status: Offline
+Site    - http://xbl.zone      | Attack: Success | Status: Offline
+Site    - dramaalert.net       | Attack: Failed  | Status: Offline
+Site    - http://x360gama.com/ | Attack: Success | Status: Offline
+Site    - 212.1.208.15         | Attack: Success | Status: Offline
+===================================================================
+Site    - servertokens.com/    | Attack: Success | Status: Offline
+Site    - www.sendspace.com/   | Attack: Failed  | Status: Online
+Site    - 46.30.212.64         | Attack: Failed  | Status: Online
+Site    - http://x360gama.com/ | Attack: Success | Status: Offline
+===================================================================
+Site    - http://xbl.zone/     | Attack: Success | Status: Offline
+Site    - x360gama.com         | Attack: Success | Status: Offline
+===================================================================
+Site    - http://x360gama.com/ | Attack: Success | Status: Offline
+Site    - spreadshirt.co.uk    | Attack: Success | Status: Offline
+Site    - http://xblrogers.com/| Attack: Failed  | Status: Online
+Site    - http://x360gama.com/ | Attack: Success | Status: Offline
+===================================================================
+Site    - http://xbl.zone/     | Attack: Success | Status: Offline
+Site    - x360gama.com/        | Attack: Success | Status: Offline
+Site    - 204.236.239.5        | Attack: Success | Status: Offline
+Site    - instant-token.com/   | Attack: Success | Status: Offline
+
+Users that have made a request will be noted below.
+
+Users:
+
+
+
+Requests for attacks have been opened: UnknownD3F4C3D - Skype.
+Contact him for sites/people/servers
