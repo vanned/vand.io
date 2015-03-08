@@ -41,7 +41,6 @@ exports.upload = function () {
     // For each file, upload to S3.
     async.each(filenames, function (fieldname, cb) {
       count++;
-      fs.writeFileSync('test.json', JSON.stringify(files[fieldname]));
       var params = {
         // TODO Change this to an authenticated-read so we can make sure other people outside the website can't see them.
         ACL: 'public-read',
