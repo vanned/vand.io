@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+  head
+  body
+    // TODO We will make this email pretty later.
+    p Welcome to Vand, your account to sign in is below.
+    p Username: #{username}
+    p Password: #{password}
+    p Your reset codes in case you lose your password are below.
+    ul
+      each val in resetCodes
+        li= val
+    p You can login
+        a(href="#{loginUrl}") here.

@@ -7,3 +7,6 @@ before_script:
 services:
   - couchdb
   - redis-server
+env:
+  global:
+    - NODE_ENV=test

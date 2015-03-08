@@ -13,7 +13,7 @@ function _validateCoordinator(coordinator, inPerson, callback) {
     return callback('Coodinator must be an object.');
   }
   if(validator.isNull(coordinator.firstname) && inPerson) {
-    return callback('Missing coordinator firstname');
+    return callback('Missing coordinator firstname.');
   }
   if(validator.isNull(coordinator.lastname) && inPerson) {
     return callback('Missing coordinator lastname.');
@@ -52,8 +52,8 @@ function _validateKeybase(keybase, useKeybase, callback) {
     return callback('Invalid keybase domain.');
   }
   return callback(null, {
-    username: keybase.username || null,
-    domain: keybase.domain || null
+    username: keybase.username,
+    domain: keybase.domain
   });
 }
 
@@ -207,14 +207,14 @@ exports.index = function(req, res) {
           }
           var job = jobs.create('appointment', {
             appointment: application.appointment,
-            company: application.company
+            company: application.company,
+            email: application.email
           }).save(function (error) {
             if(error) {
               console.log(error);
               return res.status(500).jsonp({message: 'Could not update application.'});
             }
             appment.update();
-            // TODO Kick of queue workflow to check alert an admin of an in person appointment or start the Keybase checks.
             return res.jsonp({message: 'Application updated.'});
           });
         });
