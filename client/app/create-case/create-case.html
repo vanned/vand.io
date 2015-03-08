@@ -1,0 +1,44 @@
+
+<!-- category-dropdown list,case description,evidencefile,tags-multiselect!-->
+<div layout="column">
+  <md-toolbar class="md-primary">
+    <h1 class="md-toolbar-tools">
+      Create New Case
+    </h1>
+  </md-toolbar>
+  <md-content class="md-padding">
+    <form name="createCase">
+      <md-input-container>
+        <label>Category</label>      
+      </md-input-container>
+  <md-autocomplete
+        ng-disabled="isDisabled"
+        md-no-cache="noCache"
+        md-selected-item="selectedItem"
+        md-search-text="searchText"
+        md-items="item in querySearch(searchText)"
+        md-item-text="item"
+        placeholder="Select category of your Case">
+      <span md-highlight-text="createCaseController.searchText">{{item}}</span>
+    </md-autocomplete>
+     <md-input-container class="md-padding">
+        <label>Description</label>
+        <textarea columns="1"></textarea>
+      </md-input-container> 
+    <md-select ng-model="tag" md-on-open="loadTags()" class="md-padding" ng-change="selectTag(tag)">
+      <md-select-label>{{ tag ? tag.name : 'Select multiple tags related to the case' }}</md-select-label>
+      <md-option ng-value="tag" ng-repeat="tag in tags">{{tag.name}}</md-option>
+    </md-select>
+    <md-content class="md-padding">
+      <md-input-container class="md-primary">
+        <input type="file" onchange="angular.element(this).scope().setFile(this)">
+        <br />
+        </md-input-container>
+        <md-button class="md-primary" ng-click="uploadFile()">Upload</md-button>
+       
+    </md-content>
+
+
+    </form>
+  </md-content>
+</div>
