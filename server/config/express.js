@@ -10,6 +10,7 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var compression = require('compression');
 var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 var methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
 var errorHandler = require('errorhandler');
@@ -73,6 +74,10 @@ module.exports = function(app) {
   if ('production' === env) {
     app.set('trust proxy', 1);
     app.use(session({
+      store: new RedisStore({
+        host: settings.redis.host,
+        port: settings.redis.port
+      }),
       cookie: {
         path: '/',
         secure: true,
@@ -90,6 +95,10 @@ module.exports = function(app) {
 
   if ('development' === env || 'test' === env) {
     app.use(session({
+      store: new RedisStore({
+        host: settings.redis.host,
+        port: settings.redis.port
+      }),
       cookie: {
         path: '/',
         secure: false,

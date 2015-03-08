@@ -16,6 +16,10 @@ module.exports = {
       cases: 'vand-test-cases'
     }
   },
+  redis: {
+    host: 'localhost',
+    port: 6379
+  },
   amazon: {
     aws: {
       s3: {

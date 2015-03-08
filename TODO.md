@@ -1,9 +1,13 @@
 # Grunt TODO
 
 
-## client/app/main/main.html
+## client/app/admin/profile/profile.controller.js
 
--  **TODO** `(line 2)`  Add captcha to the apply page
+-  **TODO** `(line 36)`  Actually make an API call to deny the application.
+
+## client/app/admin/login/login.html
+
+-  **TODO** `(line 5)`  The header is not showing up because the navbar on top of it -->
 
 ## server/api/admin/login/login.controller.js
 
