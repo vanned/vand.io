@@ -5,11 +5,12 @@
 'use strict';
 
 var express = require('express');
+var busboy = require('connect-busboy');
 var favicon = require('serve-favicon');
 var morgan = require('morgan');
+// var bodyParser = require('body-parser');
 var compression = require('compression');
 var session = require('express-session');
-var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
 var errorHandler = require('errorhandler');
@@ -23,8 +24,13 @@ module.exports = function(app) {
   app.engine('html', require('ejs').renderFile);
   app.set('view engine', 'html');
   app.use(compression());
-  app.use(bodyParser.urlencoded({ extended: false }));
-  app.use(bodyParser.json());
+  // app.use(bodyParser.urlencoded({ extended: false }));
+  // app.use(bodyParser.json());
+  app.use(busboy({
+    limits: {
+      fileSize: 30 * 1024 * 1024
+    }
+  }));
   app.use(methodOverride());
   app.use(cookieParser(config.session.secret));
   app.use(session({
@@ -35,6 +41,48 @@ module.exports = function(app) {
       httpOnly: true
     }
   }));
+  app.use(function (req, res, next) {
+    req.files = {};
+    req.body = {};
+    if(req.busboy) {
+      req.busboy.on('field', function (fieldname, val, fieldnameTruncated, valTruncated) {
+        req.body[fieldname] = val;
+      });
+      req.busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
+        if(!filename) {
+          next();
+        }
+        file.fileRead = [];
+        file.on('data', function (chunk) {
+          this.fileRead.push(chunk);
+        });
+        file.on('error', function (error) {
+          console.log('Error while buffering the stream: ', error);
+        });
+        file.on('end', function () {
+          var finalBuffer = Buffer.concat(this.fileRead);
+          req.files[fieldname] = {
+            buffer: finalBuffer,
+            size: finalBuffer.length,
+            filename: filename,
+            mimetype: mimetype
+          };
+        });
+      });
+      req.busboy.on('filesLimit', function () {
+        next();
+      });
+      req.busboy.on('error', function (error) {
+        console.log('Error while parsing the form: ', error);
+      });
+      req.busboy.on('finish', function () {
+        next();
+      });
+      req.pipe(req.busboy);
+    } else {
+      next();
+    }
+  });
 
   if ('production' === env) {
     app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
