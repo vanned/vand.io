@@ -3,40 +3,41 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <base href="/">
-  <title>Vand</title>
-  <meta name="description" content="Sharing Forencics Data w/ Private &amp; Public Sector">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <!-- build:css(client) app/vendor.css -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
-  <!-- endbower -->
-  <!-- endbuild -->
-  <!-- build:css({.tmp,client}) app/app.css -->
-  <link rel="stylesheet" href="app/app.css">
-  <!-- injector:css -->
-  <link rel="stylesheet" href="app/app.css">
-  <link rel="stylesheet" href="app/application-form/application-form.css">
-  <link rel="stylesheet" href="app/main/css/skel.css">
-  <link rel="stylesheet" href="app/main/css/style-mobile.css">
-  <link rel="stylesheet" href="app/main/css/style-mobilep.css">
-  <link rel="stylesheet" href="app/main/css/style-narrow.css">
-  <link rel="stylesheet" href="app/main/css/style-normal.css">
-  <link rel="stylesheet" href="app/main/css/style-wide.css">
-  <link rel="stylesheet" href="app/main/css/style.css">
-  <link rel="stylesheet" href="app/main/main.css">
-  <link rel="stylesheet" href="components/footer/footer.css">
-  <link rel="stylesheet" href="components/navbar/navbar.css">
-  <!-- endinjector -->
-  <!-- endbuild -->
-</head>
-<body ng-app="vandioApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>Vand</title>
+    <meta name="description" content="Sharing Forencics Data w/ Private &amp; Public Sector">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+      <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,client}) app/app.css -->
+    <link rel="stylesheet" href="app/app.css">
+      <!-- injector:css -->
+      <link rel="stylesheet" href="app/app.css">
+      <link rel="stylesheet" href="app/application-form/application-form.css">
+      <link rel="stylesheet" href="app/create-case/create-case.css">
+      <link rel="stylesheet" href="app/main/css/skel.css">
+      <link rel="stylesheet" href="app/main/css/style-mobile.css">
+      <link rel="stylesheet" href="app/main/css/style-mobilep.css">
+      <link rel="stylesheet" href="app/main/css/style-narrow.css">
+      <link rel="stylesheet" href="app/main/css/style-normal.css">
+      <link rel="stylesheet" href="app/main/css/style-wide.css">
+      <link rel="stylesheet" href="app/main/css/style.css">
+      <link rel="stylesheet" href="app/main/main.css">
+      <link rel="stylesheet" href="app/user-login/user-login.css">
+      <link rel="stylesheet" href="components/footer/footer.css">
+      <link rel="stylesheet" href="components/navbar/navbar.css">
+      <!-- endinjector -->
+    <!-- endbuild -->
+  </head>
+  <body ng-app="vandioApp">
 
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -81,10 +82,17 @@
     <!-- build:js({.tmp,client}) app/app.js -->
     <script src="app/app.js"></script>
     <!-- injector:js -->
+    <script src="app/application-form/application-form.controller.js"></script>
+    <script src="app/application-form/application-form.js"></script>
     <script src="app/application-thankyou/application-thankyou.controller.js"></script>
     <script src="app/application-thankyou/application-thankyou.js"></script>
+    <script src="app/create-case/create-case.controller.js"></script>
+    <script src="app/create-case/create-case.js"></script>
     <script src="app/main/main.controller.js"></script>
     <script src="app/main/main.js"></script>
+    <script src="app/services/userservice/userservice.service.js"></script>
+    <script src="app/user-login/user-login.controller.js"></script>
+    <script src="app/user-login/user-login.js"></script>
     <script src="components/navbar/navbar.controller.js"></script>
     <!-- endinjector -->
     <!-- endbuild -->
