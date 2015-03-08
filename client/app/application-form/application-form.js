@@ -3,7 +3,7 @@
 angular.module('vandioApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/application/:ID', {
+      .when('/application/:id', {
         templateUrl: 'app/application-form/application-form.html',
         controller: 'AppFormCtrl'
       });
