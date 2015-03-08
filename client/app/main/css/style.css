@@ -842,10 +842,10 @@ input[type="button"],
 #banner {
 	background-color: #f6f6f6;
 	background-attachment: scroll,								fixed;
-	background-image: url("images/overlay.png"), url("../images/banner.jpg");
+	background-image: url("images/bg.jpg");
 	background-position: top left,							center center;
 	background-repeat: repeat,								no-repeat;
-	background-size: auto,								cover;
+	background-size: cover;
 	color: #fff;
 	padding: 12em 0;
 	position: relative;
@@ -875,11 +875,12 @@ input[type="button"],
 
 #banner .inner {
 	background: #1d2726;
-	background: rgba(29, 39, 38, 0.9);
+	background: rgba(29, 39, 38, 0.6);
 	display: inline-block;
 	padding: 3.5em 5em;
 	position: relative;
 	z-index: 2;
+	text-align: "center"
 }
 
 #banner .inner h2 {
@@ -923,10 +924,18 @@ input[type="button"],
 	color: #fff !important;
 }
 
+#banner .inner-right{
+	margin-top:-100px;
+}
+
 body.is-loading #banner:after {
 	opacity: 1.0;
 }
 
+.logo{
+	width:128px;
+	height: 128px;
+}
 /* Main */
 
 #main > header.major {
@@ -938,6 +947,8 @@ body.is-loading #banner:after {
 
 #one {
 	padding-bottom: 0;
+  	height: 300px;
+  	text-align: center;
 }
 
 #one p {
@@ -952,6 +963,7 @@ body.is-loading #banner:after {
 	padding-right: 6em;
 	vertical-align: middle;
 	width: 50%;
+	padding: 20px 0;
 }
 
 #one .device {
@@ -982,4 +994,10 @@ body.is-loading #banner:after {
 
 .input-email{
 	width: 50%;
+}
+
+
+/*Two*/
+#two, #four{
+	border-bottom:10px solid #E9685F;
 }
