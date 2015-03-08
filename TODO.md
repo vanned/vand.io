@@ -22,15 +22,25 @@
 
 -  **TODO** `(line 449)`  Finish writing the update application tests.
 
-<<<<<<< HEAD
+## server/api/case/case.spec.js
+
+-  **TODO** `(line 8)`  Finish writing the test cases for this endpoint.
+
+## server/api/case/open/open.controller.js
+
+-  **TODO** `(line 9)`  Change this file size limit to a more reasonable value later.
+
 ## server/api/user/login/login.controller.js
 
 -  **TODO** `(line 33)`  Lock the user out if they continue to use the wrong password.
-=======
+
 ## server/components/appointment/index.js
 
 -  **TODO** `(line 119)`  Get keybase checks working.
->>>>>>> master
+
+## server/components/case/index.js
+
+-  **TODO** `(line 46)`  Change this to an authenticated-read so we can make sure other people outside the website can't see them.
 
 ## server/components/emails/templates/admin/appointment/html.jade
 

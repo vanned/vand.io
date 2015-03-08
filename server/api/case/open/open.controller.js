@@ -54,6 +54,7 @@ exports.index = function(req, res) {
     return cb(null);
   }, function (error) {
     if(error) {
+      console.log(error);
       return res.status(400).jsonp({message: error});
     }
     var job = jobs.create('createCase', {
@@ -62,7 +63,7 @@ exports.index = function(req, res) {
       tags: tags,
       description: description,
       files: req.files
-    }, function (error) {
+    }).save(function (error) {
       if(error) {
         console.log(error);
         return res.status(500).jsonp({message: 'Could not open a new case.'});

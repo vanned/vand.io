@@ -51,7 +51,7 @@ db.create(settings.couchdb.dbs.admins, function (err) {
                 console.log('Error inserting application view.'.red);
                 return console.log(err);
               }
-              appDB.insert(caseView, '_design/cases', function (err) {
+              caseDB.insert(caseView, '_design/cases', function (err) {
                 // 409 is Document update conflict.
                 if(err && err.statusCode !== 409) {
                   console.log('Error inserting cases view.'.red);
