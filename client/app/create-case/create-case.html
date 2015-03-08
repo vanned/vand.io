@@ -12,11 +12,11 @@
         md-items="item in querySearch(searchText)"
         md-item-text="item"
         placeholder="Select category of your Case">
-        <span md-highlight-text="createCaseController.searchText">{{item}}</span>
+        <span md-highlight-text="searchText">{{item}}</span>
       </md-autocomplete>
       <md-input-container class="md-padding">
         <label>Description</label>
-        <textarea columns="1"></textarea>
+        <textarea columns="1" ng-model="description"></textarea>
       </md-input-container>
       <md-select ng-model="tag" md-on-open="loadTags()" class="md-padding" ng-change="selectTag(tag)">
         <md-select-label>{{ tag ? tag.name : 'Select multiple tags related to the case' }}</md-select-label>
@@ -24,7 +24,7 @@
       </md-select>
       <md-content class="md-padding">
         <md-input-container class="md-primary">
-          <input type="file" onchange="angular.element(this).scope().setFile(this)">
+          <input type="file" file-model="myFile" />
           <br />
         </md-input-container>
         <md-button class="md-primary" ng-click="uploadFile()">Upload</md-button>

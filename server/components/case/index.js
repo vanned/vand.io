@@ -49,6 +49,7 @@ exports.upload = function () {
         Body: new Buffer(files[fieldname].buffer),
         ContentType: files[fieldname].mimetype,
         ContentLength: files[fieldname].size,
+        ServerSideEncryption: "AES256"
       };
       s3.upload(params, function (error, data) {
         if(error) {
@@ -67,6 +68,7 @@ exports.upload = function () {
       }
       // Create new case.
       caseRes._id = uuid.v4();
+      caseRes.username = username;
       caseRes.category = category;
       caseRes.tags = tags;
       caseRes.description = description;

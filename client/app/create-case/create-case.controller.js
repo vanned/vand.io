@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('vandioApp').controller('createCaseController', ['$scope', 'tagService', '$mdToast', function ($scope, tagService, $mdToast) {
+angular.module('vandioApp').controller('createCaseController', ['$scope', 'tagService', '$mdToast', 'caseService', function ($scope, tagService, $mdToast, caseService) {
 $scope.user = {};
 $scope.isDisabled = false;
 $scope.noCache = true;
@@ -40,7 +40,7 @@ $scope.querySearch = function(searchText){
   }];
   categories.forEach(function(each){
     if(each.id.toLowerCase().indexOf(searchText) != -1 ) {
-      result.push(each.id);
+      result.push(each.value);
     }
   });
   $scope.item = result;
@@ -61,13 +61,25 @@ $scope.loadTags = function() {
 };
 
 $scope.uploadFile = function() {
-
+  console.log($scope.selectedItem);
+  console.log($scope.selectedTags);
+  console.log($scope.myFile);
+  caseService.openCase({
+    category: $scope.selectedItem,
+    description: $scope.description,
+    tags: ['foobar'],
+    file: $scope.myFile
+  }).success(function (caseResp) {
+    console.log(caseResp);
+  }).error(function (error, statusCode) {
+    console.log(error);
+  });
 };
 
 $scope.selectedTags = [];
 
 $scope.selectTag = function(tag) {
-  $scope.selectedTag.push(tag);
+  $scope.selectedTags.push(tag);
 };
 
 }]);
