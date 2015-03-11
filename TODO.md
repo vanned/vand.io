@@ -44,7 +44,7 @@
 
 ## server/components/case/index.js
 
--  **TODO** `(line 46)`  Change this to an authenticated-read so we can make sure other people outside the website can't see them.
+-  **TODO** `(line 45)`  Change this to an authenticated-read so we can make sure other people outside the website can't see them.
 
 ## server/components/emails/templates/admin/appointment/html.jade
 
