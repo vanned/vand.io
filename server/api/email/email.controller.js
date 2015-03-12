@@ -9,8 +9,8 @@ exports.index = function(req, res) {
   if(config.env !== 'test') {
       var transport = nodemailer.createTransport(sgTransport({
         auth: {
-          api_user: config.email.accounts.sendgrid.username,
-          api_key: config.email.accounts.sendgrid.password
+          api_user: config.email.sendgrid.username,
+          api_key: config.email.sendgrid.password
         }
       }));
       transport.sendMail({

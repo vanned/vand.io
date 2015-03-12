@@ -10,8 +10,6 @@
     "colors": "^1.0.3",
     "composable-middleware": "^0.3.0",
     "compression": "~1.0.1",
-    "connect-busboy": "0.0.2",
-    "connect-mongo": "^0.4.1",
     "connect-redis": "^2.2.0",
     "cookie-parser": "~1.0.1",
     "ejs": "~0.8.4",
