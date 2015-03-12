@@ -40,6 +40,10 @@ module.exports = {
       username: process.env.VAND_EMAIL_SENDGRID_USERNAME || '',
       password: process.env.VAND_EMAIL_SENDGRID_PASSWORD || ''
     },
+    forward: {
+      from: 'forward@vand.io',
+      to: process.env.VAND_EMAIL_FORWARD_TO || ''
+    },
     noReply: 'no-reply@vand.io',
     admins: 'admins@vand.io'
   },

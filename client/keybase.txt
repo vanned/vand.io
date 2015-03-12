@@ -1,0 +1,67 @@
+==================================================================
+https://keybase.io/brutalhonesty
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://vand.io
+  * I am brutalhonesty (https://keybase.io/brutalhonesty) on keybase.
+  * I have a public key with fingerprint 1EE0 AFF2 29DD 0485 CCB3  E456 2A3C 4FAC 130A AD8C
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "1ee0aff229dd0485ccb3e4562a3c4fac130aad8c",
+            "host": "keybase.io",
+            "key_id": "2a3c4fac130aad8c",
+            "kid": "01018a3ef10ec28911b981bc641afe9aacab7a14b63eb458fc78df9ee4b8782d7fd80a",
+            "uid": "b60ac846f1d457aa60151ab6998d8000",
+            "username": "brutalhonesty"
+        },
+        "service": {
+            "hostname": "vand.io",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1426118936,
+    "expire_in": 157680000,
+    "prev": "ddbc339a3fa86a452002ca4e1cf8a7322a7f586c4ff7f3908a44625089eceed2",
+    "seqno": 36,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMIeAnicbZJrSBRRFMdXLdMFI4rw0ZPpIYTovfO8s7RZEQQVUVrSw1zvvXNHJ2tm
+m53dMjPoBZFEFEVBD00rEj/0InssgmUWKGUYQfqlLKkItCA2KySasfrWp8s95/f/
+nwfnUUaKz5+UuBfMXVmfmp3U/WBJ1Lfe15dVwxFLq+YCNVwVG3t0w6xgdtg2TIcL
+cJAxgHWd51VNAyKSKCUCEyWZxwIVdUyhADDWEOXyuEor4ilcG4IjLN+w3Jj7CRma
+G/0PXzWWABBAhAWmQ8Aoj1QIiYogobIIsc5UjCkmCoYikQVGRAnpVEGarjImEqQg
+XlN0DQHs2kXH7IgMMEWirENNlBSMZQAliImsqsjlAPDACLNNvJ15tB118LZKy2QR
+p5qrzePcVMygzNuDN85fLIZN7c88YdtyLGptc4OVjhMOeBqnOuxBOxkJ/ZWHiGFq
+7hpdQYzZEcMyuQB0SeoYnh8UeRlCpApyHsd2hQ2bhQyPkBTZaxF4ZVjMtdQ0QgVB
+xYKOkYxFiQeAp1hkkOoIKwLPY0WXkOwuVld0QQUIi6LMSwCpjDKm8Zw30A7T4gJe
+KQdXuJ4Ro8LETtRmXO3D9tJxviS/L3V8sncJPn/6pH/3EVow4Vd++rHWptWzFoCe
+NqN8f/R61eKR0rLjozk/E6Cn6E6YjNxIzJ9a8nRlkA5uap9dvab7VcrQSFffzKV1
+8W8l/olfxUDq1nuJ3e15z+ct4TMnFZ2bFqxvPVE2NDd9zsncdV1EEFf7ry6K7/m0
+8Nro9P7hW+MOF+5r2hD3Zbb+KF68JXny+YahtObG/MqXLTOE0rMtRwYLDy23JxYI
+3Nv+jOz23iddyUeKO8/u5aZcCF6Of3l8Kvd054zej1mlGwtqDp5R707v+3zbTHn9
+IvlSf0mj/0Tnh/s5a9uyYxn2/KbygeFEx/ee1+tI0/tldTdXDdwvz3yWFtwcv5i0
+4sbL5jdH3x1o6LjyGw8xJ4k=
+=5hXT
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/brutalhonesty
+
+==================================================================

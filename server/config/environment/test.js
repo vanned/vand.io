@@ -36,6 +36,10 @@ module.exports = {
       username: 'testUser',
       password: 'testPassword'
     },
+    forward: {
+      from: 'test@vand.io',
+      to: 'test@gmail.com'
+    },
     noReply: 'no-reply@test.com',
     admins: 'admins@test.com'
   },
