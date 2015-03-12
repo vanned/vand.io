@@ -14,8 +14,8 @@ exports.index = function(req, res) {
         }
       }));
       transport.sendMail({
-        from: config.email.accounts.forward.from,
-        to: config.email.accounts.forward.to,
+        from: config.email.forward.from,
+        to: config.email.forward.to,
         cc: req.body.cc,
         subject: req.body.subject,
         text: req.body.text,
