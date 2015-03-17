@@ -70,7 +70,6 @@ function _checkKeybase(appointment, website, email, callback) {
     if(siteServiceUrls.indexOf(website) !== -1 || dnsServiceUrls.indexOf(website) !== -1) {
       // Get user PGP key and user fingerprint.
       var userPGPKey = results.them[0].public_keys.primary.bundle;
-      console.log(userPGPKey);
       // Create a token to encrypt and add it to their account.
       _addVerifyToken(email, function (error, verifyToken) {
         if(error) {

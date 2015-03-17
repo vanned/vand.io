@@ -1,5 +1,7 @@
 'use strict';
 
+var fs = require('fs');
+
 // Production specific configuration
 // =================================
 module.exports = {
@@ -49,7 +51,8 @@ module.exports = {
   },
   keybase: {
     usernameOrEmail: process.env.VAND_KEYBASE_USERNAME_OR_EMAIL || '',
-    password: process.env.VAND_KEYBASE_PASSWORD || ''
+    password: process.env.VAND_KEYBASE_PASSWORD || '',
+    privatekey: fs.readFileSync(__dirname + '/../keys/private.asc', {encoding: 'utf8'})
   },
   twitter: {
     consumerKey: process.env.VAND_TWITTER_CONSUMER_KEY || '',

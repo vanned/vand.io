@@ -22,8 +22,10 @@ function _checkJobLife(lastUpdated, state, error) {
 exports.index = function(req, res) {
   kue.Job.get(req.query.id, function (error, job) {
     if(error) {
+      console.log(error);
       return res.status(400).jsonp({message: 'Invalid id.'});
     }
+    console.log(job.error());
     var isStale = _checkJobLife(parseInt(job.updated_at), job.state(), job.error());
     if(isStale) {
       job.remove(function (error) {

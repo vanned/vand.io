@@ -5,7 +5,9 @@ angular.module('vandioApp').controller('ApplicationVerifyCtrl', ['$scope', 'appl
   var stop = $interval(function () {
     applicationService.status(jobId).success(function (statusResp) {
       if(statusResp.progress === "100") {
-        $interval.cancel(stop);
+        if(stop) {
+          $interval.cancel(stop);
+        }
         $scope.serverMessage = statusResp.message;
       }
     }).error(function (error, statusCode) {
@@ -17,6 +19,7 @@ angular.module('vandioApp').controller('ApplicationVerifyCtrl', ['$scope', 'appl
       );
     });
   }, 2000);
+
   $scope.$on('$destroy', function () {
     if(stop) {
       $interval.cancel(stop);
@@ -38,7 +41,6 @@ angular.module('vandioApp').controller('ApplicationVerifyCtrl', ['$scope', 'appl
       $window.localStorage.setItem('id', null);
       $location.path('/user/login');
     }).error(function (error, statusCode) {
-      console.log(error);
       $mdToast.show(
         $mdToast.simple()
         .content(error.message)

@@ -20,11 +20,23 @@
 
 ## server/api/application/approved/approved.controller.js
 
--  **TODO** `(line 64)`  Revert the database changes of inserting the users.
+-  **TODO** `(line 66)`  Revert the database changes of inserting the users.
+
+## server/api/application/status/status.spec.js
+
+-  **TODO** `(line 7)`  write application status test.
 
 ## server/api/application/updateApplication.spec.js
 
 -  **TODO** `(line 449)`  Finish writing the update application tests.
+
+## server/api/application/verify/verify.controller.js
+
+-  **TODO** `(line 207)`  Revert the database changes of inserting the users.
+
+## server/api/application/verify/verify.spec.js
+
+-  **TODO** `(line 7)`  Write application verify test.
 
 ## server/api/case/case.spec.js
 
@@ -37,10 +49,6 @@
 ## server/api/user/login/login.controller.js
 
 -  **TODO** `(line 33)`  Lock the user out if they continue to use the wrong password.
-
-## server/components/appointment/index.js
-
--  **TODO** `(line 119)`  Get keybase checks working.
 
 ## server/components/case/index.js
 

@@ -1,5 +1,7 @@
 'use strict';
 
+var fs = require('fs');
+
 // Test specific configuration
 // ===========================
 module.exports = {
@@ -45,7 +47,8 @@ module.exports = {
   },
   keybase: {
     usernameOrEmail: 'testUsername',
-    password: 'testPassword'
+    password: 'testPassword',
+    privatekey: fs.readFileSync(__dirname + '/../keys/private.asc', {encoding: 'utf8'})
   },
   twitter: {
     consumerKey: 'testConsumerKey',
