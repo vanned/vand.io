@@ -28,7 +28,7 @@ var caseView = require('./server/components/views/case.json');
  * @return {Function} The callback function.
  */
 function _s3Workflow (callback) {
-  console.log('Getting Amazon buckets.');
+  console.log('Getting Amazon buckets.'.yellow);
   s3.listBuckets(function (error, bucketData) {
     if(error) {
       return callback(error);
@@ -50,7 +50,7 @@ function _s3Workflow (callback) {
           LocationConstraint: 'us-west-1'
         }
       };
-      console.log('Creating Amazon bucket.');
+      console.log('Creating Amazon bucket.'.yellow);
       s3.createBucket(params, function (error, data) {
         if(error) {
           return callback(error);
@@ -59,7 +59,7 @@ function _s3Workflow (callback) {
         return callback(null);
       });
     } else {
-      console.log('Amazon Bucket already exists.');
+      console.log('Amazon Bucket already exists.'.green);
       return callback(null);
     }
   });

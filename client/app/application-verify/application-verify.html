@@ -1,0 +1,31 @@
+<div class="content">
+  <md-content layout="row" layout-align="center center">
+    <md-card flex="66">
+      <md-card-content>
+        <md-toolbar class="md-primary">
+          <div class="md-toolbar-tools">
+            <span class="md-flex">Keybase Verification</span>
+          </div>
+        </md-toolbar>
+        <md-subheader class="md-primary">We need you to verify the Keybase account provided.</md-subheader>
+        <form name="verifyForm" ng-submit="verifyAccount()">
+          <div layout="row" layout-sm="column" layout-align="space-around" ng-show="!serverMessage">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+          </div>
+          <h4 ng-show="serverMessage">Please decrypt this message</h4>
+          <md-input-container flex ng-show="serverMessage">
+            <textarea cols="1" ng-model="serverMessage"></textarea>
+          </md-input-container>
+          <h4 ng-show="serverMessage">Re-encrypt the message with your own Keybase account</h4>
+          <md-input-container flex ng-show="serverMessage">
+            <label>Paste the new encrypted message here</label>
+            <textarea cols="1" ng-model="userMessage"></textarea>
+          </md-input-container>
+          <div layout="row">
+            <md-button type='submit' class="md-raised md-primary" ng-disabled="!serverMessage">Submit</md-button>
+          </div>
+        </form>
+      </md-card-content>
+    </md-card>
+  </md-content>
+</div>

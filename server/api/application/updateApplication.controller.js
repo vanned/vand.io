@@ -45,15 +45,8 @@ function _validateKeybase(keybase, useKeybase, callback) {
   if(validator.isNull(keybase.username) && useKeybase) {
     return callback('Missing keybase username.');
   }
-  if(validator.isNull(keybase.domain) && useKeybase) {
-    return callback('Missing keybase domain.');
-  }
-  if(!validator.isURL(keybase.domain) && useKeybase) {
-    return callback('Invalid keybase domain.');
-  }
   return callback(null, {
-    username: keybase.username,
-    domain: keybase.domain
+    username: keybase.username
   });
 }
 
@@ -215,7 +208,7 @@ exports.index = function(req, res) {
               return res.status(500).jsonp({message: 'Could not update application.'});
             }
             appment.update();
-            return res.jsonp({message: 'Application updated.'});
+            return res.jsonp({message: 'Application updated.', id: job.id});
           });
         });
       });

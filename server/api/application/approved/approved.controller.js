@@ -33,7 +33,9 @@ exports.index = function(req, res) {
     }
     var application = reply.rows[0].value;
     application.approved = true;
+    application.verifyToken = null;
     application.approvedBy = username;
+    application.updated = moment.utc().valueOf();
     // Create new random account for company.
     user._id = uuid.v4();
     user.username = uuid.v4();

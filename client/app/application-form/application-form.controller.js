@@ -1,7 +1,7 @@
 /* jshint:global moment */
 'use strict';
 
-angular.module('vandioApp').controller('AppFormCtrl', ['$scope', 'applicationService', '$mdToast', '$routeParams', '$location', function ($scope, applicationService, $mdToast, $routeParams, $location) {
+angular.module('vandioApp').controller('AppFormCtrl', ['$scope', 'applicationService', '$mdToast', '$routeParams', '$location', '$window', function ($scope, applicationService, $mdToast, $routeParams, $location, $window) {
   $scope.application = {
     company: {},
     appointment: {},
@@ -25,23 +25,29 @@ angular.module('vandioApp').controller('AppFormCtrl', ['$scope', 'applicationSer
           phonenumber: $scope.application.appointment.phonenumber,
           email: $scope.application.appointment.email,
         },
-        keybase: {},
+        keybase: $scope.application.appointment.keybase,
         date: dateTime
       }
     }).success(function (updateResp) {
       $mdToast.show(
         $mdToast.simple()
-          .content(updateResp.message)
-          .position('bottom left')
-          .hideDelay(3000)
+        .content(updateResp.message)
+        .position('bottom left')
+        .hideDelay(3000)
       );
-      $location.path('/');
+      if($scope.application.appointment.useKeybase) {
+        console.log(updateResp.id);
+        $window.localStorage.setItem('id', updateResp.id);
+        $location.path('/application/' + $routeParams.id + '/verify');
+      } else {
+        $location.path('/');
+      }
     }).error(function (error, statusCode) {
       $mdToast.show(
         $mdToast.simple()
-          .content(error.message)
-          .position('bottom left')
-          .hideDelay(3000)
+        .content(error.message)
+        .position('bottom left')
+        .hideDelay(3000)
       );
     });
   };

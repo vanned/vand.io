@@ -9,3 +9,4 @@ dist
 client/docs/output
 package.json
 .DS_store
+/server/config/keys/private.asc

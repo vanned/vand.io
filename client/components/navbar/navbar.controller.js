@@ -1,16 +1,22 @@
 'use strict';
 
-angular.module('vandioApp').controller('NavbarCtrl', ['$scope', '$location', '$anchorScroll', '$window', 'adminService', 'userservice', '$mdToast', function ($scope, $location, $anchorScroll, $window, adminService, userservice, $mdToast) {
+angular.module('vandioApp').controller('NavbarCtrl', ['$scope', '$location', '$anchorScroll', '$window', 'adminService', 'userservice', '$mdToast', '$rootScope', function ($scope, $location, $anchorScroll, $window, adminService, userservice, $mdToast, $rootScope) {
   $scope.goToBottom = function () {
     $location.path('/');
     $location.hash('four');
     $anchorScroll();
   };
   if($window.localStorage.getItem('username')) {
-    $scope.loggedIn = true;
+    $rootScope.$emit('loggedIn');
   } else {
-    $scope.loggedIn = false;
+    $rootScope.$emit('loggedOut');
   }
+  $rootScope.$on('loggedIn', function () {
+    $scope.loggedIn = true;
+  });
+  $rootScope.$on('loggedOut', function () {
+    $scope.loggedIn = false;
+  });
   $scope.logout = function () {
     if($window.localStorage.getItem('isAdmin')) {
       adminService.logout().success(function (adminResp) {
@@ -21,7 +27,7 @@ angular.module('vandioApp').controller('NavbarCtrl', ['$scope', '$location', '$a
             .hideDelay(3000)
         );
         $location.path('/admin/login');
-        $scope.loggedIn = false;
+        $rootScope.$emit('loggedOut');
         $window.localStorage.clear();
       }).error(function (error, statusCode) {
         $mdToast.show(
@@ -40,7 +46,7 @@ angular.module('vandioApp').controller('NavbarCtrl', ['$scope', '$location', '$a
             .hideDelay(3000)
         );
         $location.path('/user/login');
-        $scope.loggedIn = false;
+        $rootScope.$emit('loggedOut');
         $window.localStorage.clear();
       }).error(function (error, statusCode) {
         $mdToast.show(

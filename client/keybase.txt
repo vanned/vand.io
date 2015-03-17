@@ -1,29 +1,24 @@
 ==================================================================
-https://keybase.io/brutalhonesty
+https://keybase.io/vand_io
 --------------------------------------------------------------------
 
 I hereby claim:
 
   * I am an admin of https://vand.io
-  * I am brutalhonesty (https://keybase.io/brutalhonesty) on keybase.
-  * I have a public key with fingerprint 1EE0 AFF2 29DD 0485 CCB3  E456 2A3C 4FAC 130A AD8C
+  * I am vand_io (https://keybase.io/vand_io) on keybase.
+  * I have a public key with fingerprint 3291 419D 614B 2968 98E5  E580 53D8 3507 AB7B 8AC8
 
 To do so, I am signing this object:
 
 {
     "body": {
         "key": {
-            "fingerprint": "1ee0aff229dd0485ccb3e4562a3c4fac130aad8c",
+            "fingerprint": "3291419d614b296898e5e58053d83507ab7b8ac8",
             "host": "keybase.io",
-            "key_id": "2a3c4fac130aad8c",
-            "kid": "01018a3ef10ec28911b981bc641afe9aacab7a14b63eb458fc78df9ee4b8782d7fd80a",
-            "uid": "b60ac846f1d457aa60151ab6998d8000",
-            "username": "brutalhonesty"
-        },
-        "revoke": {
-            "sig_ids": [
-                "46b6fc64f557d7db281cb01971548c09eceed851e78764ee3f7fe93fe0ecec600f"
-            ]
+            "key_id": "53d83507ab7b8ac8",
+            "kid": "0101c860daef3e40b78e5115ea8ef5c939eb5ebb53d18df2d08077e97a753ba501c50a",
+            "uid": "429382b947a1c411f55104001f623619",
+            "username": "vand_io"
         },
         "service": {
             "hostname": "vand.io",
@@ -32,10 +27,10 @@ To do so, I am signing this object:
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1426120451,
+    "ctime": 1426537691,
     "expire_in": 157680000,
-    "prev": "4b18f82222334bab0feb320586ea4c61cbdc8b46d0d38c06699c78c317b439ea",
-    "seqno": 37,
+    "prev": "f5f89ac6d9348f9236d7d9a19f2abbfcca97d0076e460cc858e8b795b0bcd40c",
+    "seqno": 2,
     "tag": "signature"
 }
 
@@ -45,29 +40,28 @@ which yields the signature:
 Version: Keybase OpenPGP v2.0.8
 Comment: https://keybase.io/crypto
 
-yMJkAnicbVJvaFZVHH43c9Z0IApFKkPul+lacs6955577jsnqYiCaE3Yh9Fsnj+/
-s91t3ft6792ra7MvIsOBlAuVrZhSlmmtIA3x9Q++brCgBbUiqAiD0g8SiJDQFGfn
-LvvW+XI4v/P8nt/zPOdM1izIVVfcv9RUt/1k1fMVX5fHenMtuZsL+i0RqT4r3291
-w/ymg7AD4kIchKmVtzAA4lrbtq8UIsyVUjhAXGpzRxLNJXYQ54pJq8HqjJKsw9AI
-nsC6IDI1c2gPlKn+D757/gJhhBl3QGME0mY+xsJnWEhKMNfgcy658DgmgjogiMu0
-9JjSPgARzGO28rRiiBu63nk6QRGXjFCNFXE9zinCLuaC+j4zOIQyYAJxyF+HDB33
-prynMwohSfusAw1WDMWoG7IYkqDDKE+s/KsWoYJqI0i7rqc8JWyGpUDY97BLmEQ+
-SADFXAwe8ygBcLRnlDsajCOQFCFt7TbcZmwxkPPkWVRPJBR5qP7NqhBHaSSjHlPs
-TNNCks8EpX2FDLUPRPuT/nYRhMq8kekoQpwEUWjlsUHKNMgIMbEpthFxcYMF+wtB
-DO1BhnA9mvlH2RwoGkoiMNPMNstxiOACaRCOjVxGgRNJjUUlmSBUIeUYl9REaKKX
-DvYEcXzIIk9gbxhZecczOnmH4TShhTztjcE6cON621O5iupc1cLK7Jvlqp9Z+t/n
-U7OLHu8cfPvDxmenC/au8Xd3nKTP/Vn6AU4fhXOVO96z167rGUlbCrj/TEvNa8Gy
-wUNLTncdfmPLJ2ePXKgaCuouN32+LLz44kzphabh+isT26Y+eungB/vr39oaRiu+
-ato+eWt6709z3vCWd9CJ748NLZ1qPrbkYtv04ta5Tbh0b/aXs42t9BG7Wnfqu0td
-i8qfli+fG6/fOTC3bdNEd/NnL38rm9eO1Aw22u8PfjG++cKXMx+Pkra/DpcfDmyt
-mdywvLRn6tbqiuENo7WdD98cunaj8pVVs3cHjqPHj0YfzF5ZOdZ1av3Ej3/cXPz7
-yJpfS+f3/Vb799NJ+faJ4z+fGau9f2cNLHdbd9VuXPHNzD+u80Y3
-=d3Zb
+yMIYAnicbVJdSBVBGL3W7Uq3bklBYVIPC2GQ3WZ2d3ZnrkV/phiiQT9IGbeZ3Vld
+tLu3e1dNSgqyHy1Fwod6SUMIwiQoIx+kNC0zDbJ6CQmxQl8qpMLooWzWCnpoXoY5
+c875zvfxDYTm+4IpfTc/vFulDVxKGe7LrvTtS900dlxijlkjRY5L5XzusuxYKU/E
+E3bMlSKSIhOoQmJqUGUy0TDBHHGEAVJMrCCgU6YzTA0sZUllTtJTCBtGkzxsOwIT
+j6htCvQ//PK5DwABNLAGTMothauA6aIChIhTzC1kEIVwhjhjwgBi05JNgIGuc6JT
+HSmMIqFGgAq7yjk7VSYKlhlRdQoNFUILIQhUAKClyYoGiUdM8kSMHuGCXUVjZlQE
+rc2SBFhlG9ybgNfIP4TfncQTjusYToUAy1w3nox4Ircm7rGqOYv+0UeZHTPFBIWi
+iieSthOTIlAwDdf2DKEqa0jRNQKzJH4sbid41PYYSNcwEMerw6uEpYUsTKihmURR
+sUVEdlM3CYXEkiljlmFQopsA6BpXNWAYGGGOmU4QA8wwVWBIXkdHY44UkUVMWios
+k3ZpjLqVCS7VPuwt8ftSgr7AgnneDviCC9P+bsbg9dSf61/2PxnMeL0rpSXwuWt2
+uz/Rkb0heLL3B6l/VP5sX/vla9fi7ydqkpnVFavTa4qg/374xcjSG74Bsm1J8/DQ
+ytHxl/cWF++5Vdi09/HmcMbT7OjWnmBJg+Z/FcjvmTzf8mCwq/TRaEH9k/070rNy
+ik71R3MKvp4uetuwM+1Cxkx33mjnjdrbX743bkubaqsLnbqYO5NzNvy2vXk6M7Tu
+zZnpq5njQyuqd387UTc2taJ3ub9Cyr+zZkFlz6G7s3j9lby1G1tXLg6HGlMvn1n0
+avVEU3fZbGFx4UdlR+DAwoPt4T0h99Puw0pHq2M/n16G6rafPecO6Fsmx3KbnbbO
+MrPTHQn8Aq0ZIOI=
+=aYOe
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
 
-View my publicly-auditable identity here: https://keybase.io/brutalhonesty
+View my publicly-auditable identity here: https://keybase.io/vand_io
 
 ==================================================================

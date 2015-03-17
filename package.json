@@ -19,6 +19,7 @@
     "express-session": "~1.0.2",
     "google-caja": "0.0.2",
     "jade": "^1.9.2",
+    "kbpgp": "^2.0.8",
     "kue": "^0.8.11",
     "lodash": "~2.4.1",
     "method-override": "~1.0.0",

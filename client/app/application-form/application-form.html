@@ -1,68 +1,70 @@
 <div class="content">
-<md-content  layout="row" layout-align="center center">
-<md-card flex="66">
-  <md-card-content>
-  <md-toolbar class="md-primary">
-    <div class="md-toolbar-tools">
-      <span class="md-flex">Update your application</span>
-    </div>
-  </md-toolbar>
-  <md-subheader class="md-primary">We need more information about you organization.</md-subheader>
-     <form  name="applicationForm" ng-submit="submitApplication()">
-     	<md-input-container>
-	      <label>Organization Name</label>
-	      <input type="text" ng-model="application.company.name" required>
-	    </md-input-container>
-	    <md-input-container>
-	      <label>Domain Name</label>
-	      <input type="url" ng-model="application.company.website" required>
-	    </md-input-container>
-	    <fieldset layout="row">
-		   <md-subheader class="md-primary">Appointment</md-subheader>
-		    <md-radio-group require ng-model="application.appointment.type">
-		      <md-radio-button value="useKeybase" disabled>Keybase</md-radio-button>
-		      <md-radio-button value="inPerson"> In-Person </md-radio-button>
-		    </md-radio-group>
-		    <div class="animate-switch-container indent-form" ng-switch on="application.appointment.type" flex="66">
-			      <div class="animate-switch" ng-switch-when="useKeybase">Under Development</div>
-		      <div class="animate-switch" ng-switch-when="inPerson">
-		      		<md-input-container>
-				      <label>First Name</label>
-				      <input type="text" ng-model="application.appointment.firstname" required autocomplete="off">
-				    </md-input-container>
-				    <md-input-container>
-				      <label>Last Name</label>
-				      <input type="text" ng-model="application.appointment.lastname" required autocomplete="off">
-				    </md-input-container>
-				    <md-input-container>
-				      <label>Email</label>
-				      <input type="email" ng-model="application.appointment.email" required autocomplete="off">
-				    </md-input-container>
-				    <md-input-container>
-				      <label>Phone</label>
-				      <input type="phone" ng-model="application.appointment.phonenumber" required>
-				    </md-input-container>
-				    <div layout="row">
-					    <md-input-container flex="33">
-					    	<div >
-						      <label>Date</label>
-						      <input type="date" ng-model="application.appointment.date" required>
-					  		</div>
-					  	</md-input-container>
-					  	<div flex="33">&nbsp;</div>
-					  	<md-input-container flex="33">
-					  		<div>
-						      <label>Time</label>
-						      <input type="time" ng-model="application.appointment.time" required>
-					  		</div>
-					    </md-input-container>
-					 <div>
-		      </div>
-		  </div>
-		 </fieldset>
-		  <div layout="row" layout-align="center center"><md-button type='submit' class="md-raised md-primary">Submit</md-button></div>
-     </form>
-  </md-card-content>
-</md-card>
-</md-content>
+  <md-content layout="row" layout-align="center center">
+    <md-card flex="66">
+      <md-card-content>
+        <md-toolbar class="md-primary">
+          <div class="md-toolbar-tools">
+            <span class="md-flex">Update your application</span>
+          </div>
+        </md-toolbar>
+        <md-subheader class="md-primary">We need more information about you organization.</md-subheader>
+        <form name="applicationForm" ng-submit="submitApplication()">
+          <md-input-container>
+            <label>Organization Name</label>
+            <input type="text" ng-model="application.company.name" required>
+          </md-input-container>
+          <md-input-container>
+            <label>Domain Name</label>
+            <input type="url" ng-model="application.company.website" required>
+          </md-input-container>
+          <fieldset layout="row">
+            <md-subheader class="md-primary">Appointment</md-subheader>
+            <md-radio-group require ng-model="application.appointment.type">
+              <md-radio-button value="useKeybase">Keybase</md-radio-button>
+              <md-radio-button value="inPerson"> In-Person </md-radio-button>
+            </md-radio-group>
+            <div class="animate-switch-container indent-form" ng-switch on="application.appointment.type" flex="66">
+            <div class="animate-switch" ng-switch-when="useKeybase">
+              <md-input-container>
+                <label>Keybase Username</label>
+                <input type="text" ng-model="application.appointment.keybase.username" required autocomplete="off">
+              </md-input-container>
+            </div>
+            <div class="animate-switch" ng-switch-when="inPerson">
+              <md-input-container>
+                <label>First Name</label>
+                <input type="text" ng-model="application.appointment.firstname" required autocomplete="off">
+              </md-input-container>
+              <md-input-container>
+                <label>Last Name</label>
+                <input type="text" ng-model="application.appointment.lastname" required autocomplete="off">
+              </md-input-container>
+              <md-input-container>
+                <label>Email</label>
+                <input type="email" ng-model="application.appointment.email" required autocomplete="off">
+              </md-input-container>
+              <md-input-container>
+                <label>Phone</label>
+                <input type="phone" ng-model="application.appointment.phonenumber" required>
+              </md-input-container>
+              <div layout="row">
+                <md-input-container flex="33">
+                  <label>Date</label>
+                  <input type="date" ng-model="application.appointment.date" required>
+                </md-input-container>
+                <div flex="33">&nbsp;</div>
+                <md-input-container flex="33">
+                  <label>Time</label>
+                  <input type="time" ng-model="application.appointment.time" required>
+                </md-input-container>
+              </div>
+            </div>
+          </fieldset>
+          <div layout="row" layout-align="center center">
+            <md-button type='submit' class="md-raised md-primary">Submit</md-button>
+          </div>
+        </form>
+      </md-card-content>
+    </md-card>
+  </md-content>
 </div>

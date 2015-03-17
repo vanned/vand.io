@@ -11,6 +11,8 @@ module.exports = function(app) {
   // Insert routes below
   app.use('/api/email', require('./api/email'));
   app.use('/api/application', require('./api/application'));
+  app.use('/api/application/status', require('./api/application/status'));
+  app.use('/api/application/verify', require('./api/application/verify'));
   app.use('/api/application/approved', require('./api/application/approved'));
 
   app.use('/api/admin/forgotPassword', require('./api/admin/forgotPassword'));

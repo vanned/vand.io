@@ -18,8 +18,7 @@ module.exports = function () {
       },
       useKeybase: false,
       keybase: {
-        username: null,
-        domain: null
+        username: null
       },
       date: null
     },
@@ -27,6 +26,7 @@ module.exports = function () {
     updated: null,
     verifyToken: null,
     approved: false,
-    approvedBy: null
+    approvedBy: null,
+    approvedByKeybase: false
   };
 };
